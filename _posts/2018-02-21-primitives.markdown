@@ -16,7 +16,10 @@ The Integer class has properties like MIN_VALUE, MAX_VALUE and SIZE which can te
 
 ![Numeric Primitives in Java]({{ "/primitive_types.png"| absolute_url }})
 
-Image from [Image Reference].  
+More about Java primitives can be found [here] and [also here].
 
-More about Java primitives can be found here:
-[Image Reference]: http://cs.fit.edu/~ryan/java/language/java-data.html
+[here]: http://cs.fit.edu/~ryan/java/language/java-data.html
+[also here]: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
+
+<span style="font-size:12px;">Stansifer, R [online] Available at: http://cs.fit.edu/~ryan/java/language/java-data.html
+[Accessed 22 Feb. 2018].</span>
