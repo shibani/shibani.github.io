@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "Primitives in Java"
+date:   2018-02-21 15:23:55 -0500
+categories: jekyll update
+---
+My first week at 8th Light has included working on Java Koans and today I’ve been digging away into Primitive types. It’s always useful to know the Primitive types of any language, and Java is no exception.  
+
+In Java, I was surprised to revisit these and note that there are 8 primitive data types, 2 of which are boolean and char, the rest being numeric. The finer points of these primitive types are notable as well.
+
+Numeric primitive types in Java include integer, long, short, double, float and byte. As is shown in the table below, these numeric primitive types can be signed or unsigned and range in size as well.  The table illustrates the minimum and maximum values of each type and the number of bits each type contains.  
+
+Finally each of these primitive types can be cast to its Object type, as in a primitive of type integer can be cast into an Integer object via a process called 'Autoboxing'. Once autoboxed, we can expect the Integer to have properties like MIN_VALUE, MAX_VALUE and SIZE which can tell us what kind of values each of these primitive types can hold.
+
+![Numeric Primitives in Java]({{ "/primitive_types.png"| absolute_url }})
+
+Image from [Image Reference].  
+
+[Image Reference]: http://cs.fit.edu/~ryan/java/language/java-data.html
