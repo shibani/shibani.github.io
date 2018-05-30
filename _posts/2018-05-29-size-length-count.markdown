@@ -4,7 +4,7 @@ title:  "Size, Length and Count in Ruby"
 date:   2018-05-29 15:23:55 -0500
 categories: ruby
 ---
-Differences between Size, Length and Count
+The Differences between Size, Length and Count
 
 Size, length and count are three different methods to find the length of an array in Ruby.  I thought it would be helpful to list the subtle differences among each.
 
