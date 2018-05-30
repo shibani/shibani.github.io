@@ -2,7 +2,7 @@
 layout: post
 title:  "Primitives in Java"
 date:   2018-02-21 15:23:55 -0500
-categories: jekyll update
+categories: java
 ---
 My first week at 8th Light has included working on Java Koans and today I’ve been digging away into Primitive types. It’s always useful to know the Primitive types of any language, and Java is no exception.  
 
@@ -21,5 +21,5 @@ More about Java primitives can be found [here] and [also here].
 [here]: http://cs.fit.edu/~ryan/java/language/java-data.html
 [also here]: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
 
-<span style="font-size:12px;">Stansifer, R [online] Available at: http://cs.fit.edu/~ryan/java/language/java-data.html
+<span style="font-size:12px;">Stansifer, R [online] Available at: <http://cs.fit.edu/~ryan/java/language/java-data.html>  
 [Accessed 22 Feb. 2018].</span>
