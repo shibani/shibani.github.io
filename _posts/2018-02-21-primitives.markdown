@@ -14,7 +14,7 @@ Each of these primitive types can be cast to its Object type, as in a primitive 
 
 The Integer class has properties like MIN_VALUE, MAX_VALUE and SIZE which can tell us more about the kind of values each of these primitive types can hold.
 
-![Numeric Primitives in Java]({{ "/primitive_types.png"| absolute_url }})
+![Numeric Primitives in Java]({{ "assets/images/primitive_types.png"| absolute_url }})
 
 More about Java primitives can be found [here] and [also here].
 

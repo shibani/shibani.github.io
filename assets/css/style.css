@@ -1,0 +1,7 @@
+---
+---
+
+@import "{{ site.theme }}";
+.right-image{
+  float:right;
+}
