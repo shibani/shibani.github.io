@@ -73,7 +73,7 @@ The BoraBora, Oslo, Wellington and Mars classes all achieve **polymorphism<sup>1
 
 The example above makes it easy to see how we could also leverage inheritance to achieve a similar result.  If we have a super class named Destination that implemented both the "book_flight" and "pack_items" methods, and all subsequent destinations were to inherit from it, we would have **polymorphism by way of inheritance**.
 
-**A caveat:** When implementing my first duck, I initially set the duck type up in my application to take in an array and return a string in one instance, and return a hash in the other. I then learned that duck types must take in the same kind of input and return the same kind of output to eliminate unnecessary complexity and work as expected.
+**A caveat:** When implementing my first duck, I initially set the duck type up in my application to take in an array and return a string in one instance, and return a hash in the other. I then learned that duck types must take in the same kind of input and return the same kind of output to eliminate unnecessary complexity, and to work as expected.
 
 Thus in Ruby, we can enable multiple classes to respond to the same messages. We can do this by leveraging Ruby’s features of polymorphism and dynamic typing<sup>2</sup>, both of which are touched upon below.  An object can therefore act like many interfaces, resulting in across-class types that are defined by behavior.<br/><br/>
 
