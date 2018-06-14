@@ -28,7 +28,7 @@ Resulting in the conclusion that **if an object quacks like a duck and walks lik
 
 For an example of a duck type in action, we might look at a vacationer planning a vacation.  In this example, they have no idea of the exact type of destination being passed, but instead trust that the duck typed destination will implement the "book_flight" method, consequently telling the vacationer which airline they should book their flight on in order to plan their vacation.
 
-What we want is to have our application do something along the lines of:  
+What we want is to have our application respond to something along the lines of:  
 
 <span style="color:#0086B3;">**Vacationer.plan_vacation(destination)**</span><br /><br />
 
@@ -90,8 +90,8 @@ vacationer_1 = Vacationer.new
 first_vacation_destination = Mars.new
 vacationer_1.plan_vacation(first_vacation_destination)
 
-puts result[:flight] # 'SpaceX's BFR rocket system'
-puts result[:items]  # 'space suit, oxygen'
+puts result[:flight] #=> 'SpaceX's BFR rocket system'
+puts result[:items]  #=> 'space suit, oxygen'
 
 
 # EXAMPLE II
@@ -100,8 +100,8 @@ vacationer_2 = Vacationer.new
 second_vacation_destination = BoraBora.new
 vacationer_2.plan_vacation(second_vacation_destination)
 
-puts result[:flight] # 'Air Tahiti'
-puts result[:items]  # 'shorts, swim things, spf'
+puts result[:flight] #=> 'Air Tahiti'
+puts result[:items]  #=> 'shorts, swim things, spf'
 
 ```
 
@@ -113,7 +113,7 @@ By now it's clear that it would be very simple to add another destination that i
 
 The <span style="color:#0086B3;">BoraBora</span>, <span style="color:#0086B3;">Oslo</span>, <span style="color:#0086B3;">Wellington</span> and <span style="color:#0086B3;">Mars</span> classes all achieve **polymorphism<sup>1</sup> by way of duck types**.
 
-The example above makes it easy to see how we could also leverage **inheritance** to achieve a similar result.  If we have a <span style="color:#0086B3;">super class named Destination</span> that implemented both the <span style="color:#0086B3;">book_flight</span> and <span style="color:#0086B3;">pack_items</span> methods, and all subsequent destinations were to inherit from it, we would have **polymorphism by way of inheritance**.
+The example above makes it easy to see how we could also leverage **inheritance** to achieve a similar result.  If we had a <span style="color:#0086B3;">super class named Destination</span> that implemented both the <span style="color:#0086B3;">book_flight</span> and <span style="color:#0086B3;">pack_items</span> methods, and all subsequent destinations were to inherit from it, we would have **polymorphism by way of inheritance**.
 
 **A caveat:** When implementing my first duck, I initially set the duck type up in my application to take in an array and return a string in one instance, and to return a hash in the other. I then learned that duck types must take in the same kind of input and return the same kind of output to eliminate unnecessary complexity, and to work as expected.
 
@@ -135,8 +135,8 @@ There are a few ways to implement polymorphism. Inheritance is one, duck typing 
 
   * Unlike dynamically-typed languages, most (though not all) statically-typed languages require that you declare the type of each variable and every method parameter.
   * Dynamic typing is in fact the very feature that paves the way for duck-typing.
-  * If we knew the class of the object we were sending a message to, we would not need to send an across class message.
-  * On the other hand, searching to create across class messages helps us to reveal stable abstractions, and areas where our code can be safely and easily extended in the future.<br/><br/>
+  * If we knew the class of the object we were sending a message to, we would not need to send an 'across class' message.
+  * On the other hand, searching to create across class messages helps us reveal stable abstractions, and areas where our code can be safely and easily extended in the future.<br/><br/>
 
 <span style="font-size:12px;">
 Metz, Sandi (2013). Practical Object-Oriented Design in Ruby: an agile primer. Upper Saddle River: Pearson Education, 2013. Print.</span>
