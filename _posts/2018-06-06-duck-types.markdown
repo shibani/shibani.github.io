@@ -28,54 +28,98 @@ Resulting in the conclusion that **if an object quacks like a duck and walks lik
 
 For an example of a duck type in action, we might look at a vacationer planning a vacation.  In this example, they have no idea of the exact type of destination being passed, but instead trust that the duck typed destination will implement the "book_flight" method, consequently telling the vacationer which airline they should book their flight on in order to plan their vacation.
 
-```ruby
-Vacationer.plan_vacation(destination)
+What we want is to have our application do something along the lines of:  
 
+<span style="color:#0086B3;">**Vacationer.plan_vacation(destination)**</span><br /><br />
+
+
+```ruby
 class Vacationer
   def plan_vacation(destination)
-    flight = destination.book_flight
+    result = {}
+    result[:flight] = destination.book_flight
+    result[:items] = destination.pack_items
+    result
   end
 end
 
 class BoraBora
   def book_flight
-    "Air Tahiti"
+    'Air Tahiti'
+  end
+
+  def pack_items
+    'shorts, swim things, spf'
   end
 end
 
 class Oslo
   def book_flight
-    "Norwegian Air"
+    'Norwegian Air'
+  end
+
+  def pack_items
+    'sweaters, winter socks'
   end
 end
 
 class Wellington
   def book_flight
-    "Qantas"
+    'Qantas'
+  end
+
+  def pack_items
+    'sweaters, hiking shoes, sunglasses'
   end
 end
 
 class Mars
   def book_flight
-    "Space Shuttle"
+    "SpaceX's BFR rocket system"
+  end
+
+  def pack_items
+    'space suit, oxygen'
   end
 end
 
-vacation_destination = Mars.new
-Vacationer.plan_vacation(vacation_destination)
+
+# EXAMPLE I
+
+vacationer_1 = Vacationer.new
+first_vacation_destination = Mars.new
+vacationer_1.plan_vacation(first_vacation_destination)
+
+puts result[:flight] # 'SpaceX's BFR rocket system'
+puts result[:items]  # 'space suit, oxygen'
+
+
+# EXAMPLE II
+
+vacationer_2 = Vacationer.new
+second_vacation_destination = BoraBora.new
+vacationer_2.plan_vacation(second_vacation_destination)
+
+puts result[:flight] # 'Air Tahiti'
+puts result[:items]  # 'shorts, swim things, spf'
+
 ```
 
-Here we would expect the flight variable to now be "Space Shuttle". <span style="font-size:16px;">:rocket:</span>
+As we can see, using the same **plan_vacation** method, in the first case we get the flight variable to be <span style="color:#0086B3;">'SpaceX's BFR rocket system'</span> <span style="font-size:16px;">:rocket:</span>, and in the second case we get a flight variable that's set to <span style="color:#0086B3;">'Air Tahiti'</span>
 
-As we can see, it would be very simple to add another destination that implemented the "book_flight" method to this list, making our application a cinch to use, while promoting ease of extendability and flexibility.
+And for the items variable, in the first case we get <span style="color:#0086B3;">'space suit, oxygen'</span>, and in the second, <span style="color:#0086B3;">'shorts, swim things, spf'</span>.
 
-The BoraBora, Oslo, Wellington and Mars classes all achieve **polymorphism<sup>1</sup> by way of duck types**.
+By now it's clear that it would be very simple to add another destination that implemented the <span style="color:#0086B3;">book_flight</span> and <span style="color:#0086B3;">pack items</span> methods to this list, making our application a cinch to use, while promoting extendability and flexibility.
 
-The example above makes it easy to see how we could also leverage inheritance to achieve a similar result.  If we have a super class named Destination that implemented both the "book_flight" and "pack_items" methods, and all subsequent destinations were to inherit from it, we would have **polymorphism by way of inheritance**.
+The <span style="color:#0086B3;">BoraBora</span>, <span style="color:#0086B3;">Oslo</span>, <span style="color:#0086B3;">Wellington</span> and <span style="color:#0086B3;">Mars</span> classes all achieve **polymorphism<sup>1</sup> by way of duck types**.
 
-**A caveat:** When implementing my first duck, I initially set the duck type up in my application to take in an array and return a string in one instance, and return a hash in the other. I then learned that duck types must take in the same kind of input and return the same kind of output to eliminate unnecessary complexity, and to work as expected.
+The example above makes it easy to see how we could also leverage **inheritance** to achieve a similar result.  If we have a <span style="color:#0086B3;">super class named Destination</span> that implemented both the <span style="color:#0086B3;">book_flight</span> and <span style="color:#0086B3;">pack_items</span> methods, and all subsequent destinations were to inherit from it, we would have **polymorphism by way of inheritance**.
 
-Thus in Ruby, we can enable multiple classes to respond to the same messages. We can do this by leveraging Ruby’s features of polymorphism and dynamic typing<sup>2</sup>, both of which are touched upon below.  An object can therefore act like many interfaces, resulting in across-class types that are defined by behavior.<br/><br/>
+**A caveat:** When implementing my first duck, I initially set the duck type up in my application to take in an array and return a string in one instance, and to return a hash in the other. I then learned that duck types must take in the same kind of input and return the same kind of output to eliminate unnecessary complexity, and to work as expected.
+
+Returning different kinds of output would make our duck types less easy to depend on by creating more work for us to do to check the nature of the return values later, subsequently driving up costs. This would impact the goal of our duck types adversely!
+
+Thus in Ruby, we can enable multiple classes to respond to the same messages. We can do this by leveraging Ruby’s features of polymorphism and dynamic typing<sup>2</sup>. Both of these are touched upon below.  An object can therefore act like many interfaces, resulting in across-class types that are defined by behavior.<br/><br/>
 
 <span style="color:#d14; font-size:16px; font-weight:bold;">1. POLYMORPHISM</span>
 
@@ -95,5 +139,8 @@ There are a few ways to implement polymorphism. Inheritance is one, duck typing 
   * On the other hand, searching to create across class messages helps us to reveal stable abstractions, and areas where our code can be safely and easily extended in the future.<br/><br/>
 
 <span style="font-size:12px;">
-Metz, Sandi (2013). Practical Object-Oriented Design in Ruby: an agile primer. Upper Saddle River: Pearson Education, 2013. Print.
-</span>
+Metz, Sandi (2013). Practical Object-Oriented Design in Ruby: an agile primer. Upper Saddle River: Pearson Education, 2013. Print.</span>
+
+<span style="font-size:12px;">
+Castillo, M (2018, March 11). Elon Musk, speaking at SXSW, projects Mars spaceship will be ready for short trips by first half of 2019 [online] Available at:
+<https://www.cnbc.com/2018/03/11/elon-musk-says-mars-spaceship-will-be-ready-for-short-trips-by-first-half-of-2019.html> [Accessed 14 Jun. 2018]</span>
