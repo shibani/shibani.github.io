@@ -105,7 +105,7 @@ puts result[:items]  #=> 'shorts, swim things, spf'
 
 ```
 
-As we can see, using the same **plan_vacation** method, in the first case we get the flight variable to be <span style="color:#1a92bb;">'SpaceX's BFR rocket system'</span> <span style="font-size:16px;">:rocket:</span>, and in the second case we get a flight variable that's set to <span style="color:#1a92bb;">'Air Tahiti'</span>
+As we can see, using the same **plan_vacation** method, in the first case we get the flight variable to be <span style="color:#1a92bb;">'SpaceX's BFR rocket system'</span><span style="font-size:16px;">:rocket:</span>, and in the second case we get a flight variable that's set to <span style="color:#1a92bb;">'Air Tahiti'</span>
 
 And for the items variable, in the first case we get <span style="color:#1a92bb;">'space suit, oxygen'</span>, and in the second, <span style="color:#1a92bb;">'shorts, swim things, spf'</span>.
 
