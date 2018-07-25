@@ -13,7 +13,7 @@ categories: js
 ![donuts]({{ "assets/images/donuts.jpg"| absolute_url }})
 &nbsp;  
 <strong><span style="color:#666">WHAT IT IS</span></strong> 
-* In its simplest form, the <strong>Factory Method</strong> encapsulates instantiation 
+* In its simplest form, the <strong>Factory Method</strong> is a design pattern that encapsulates instantiation 
 * It defines an interface for instantiating objects.  
 * The interface does not need to know the type of object it is required to instantiate  
 * It instead defers instantiation to subclasses. 
