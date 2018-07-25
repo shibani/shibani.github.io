@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The Factory Pattern"
-date:   2018-07-08 15:23:55 -0500
+date:   2018-07-02 15:23:55 -0500
 categories: js
 ---
 <style type="text/css">
@@ -53,7 +53,7 @@ The Factory Method defines an interface for creating Factories that will each re
 ```ruby
 module DonutFactory
   def make_Donut
-    "make_Donut implementation goes here"
+    "placeholder for make_Donut implementation overrides"
   end
 end
 
@@ -91,11 +91,11 @@ The Abstract Factory defines an interface for creating Factories that will  each
 ```ruby
 module UI_Factory
   def create_menu
-    "menu implementation goes here"
+    "placeholder for menu implementation overrides"
   end
 
   def create_button
-    "button implementation goes here"
+    "placeholder for button implementation overrides"
   end
 
   def create_elements
