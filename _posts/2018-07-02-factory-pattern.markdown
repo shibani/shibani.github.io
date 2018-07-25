@@ -53,7 +53,7 @@ The Factory Method defines an interface for creating Factories that will each re
 ```ruby
 module DonutFactory
   def make_Donut
-    "placeholder for make_Donut implementation overrides"
+    "placeholder for make_Donut implementation"
   end
 end
 
@@ -91,11 +91,11 @@ The Abstract Factory defines an interface for creating Factories that will  each
 ```ruby
 module UI_Factory
   def create_menu
-    "placeholder for menu implementation overrides"
+    "placeholder for menu implementation"
   end
 
   def create_button
-    "placeholder for button implementation overrides"
+    "placeholder for button implementation"
   end
 
   def create_elements
