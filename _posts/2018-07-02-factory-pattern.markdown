@@ -154,7 +154,7 @@ The Template pattern is similar to the Factory pattern, except if instantiation 
 
 &nbsp;  
 <strong><span style="color:#666">TYPES OF INPUTS AND OUTPUTS</span></strong>  
-The Factory Pattern must take in the same types of inputs and return inputs of the same type (or different subtypes).      
+The Factory Pattern must take in the same types of inputs and return inputs of the same type (or different subtypes of the same type).      
 
 &nbsp;  
 <strong><span style="color:#666">WHEN TO USE IT</span></strong>  
