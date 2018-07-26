@@ -12,8 +12,8 @@ categories: js
 
 ![donuts]({{ "assets/images/donuts.jpg"| absolute_url }})
 &nbsp;  
-<strong><span style="color:#900">WHAT IS IT?</span></strong> 
-* In its simplest form, the <strong>Factory Method</strong> is a design pattern that encapsulates instantiation. 
+<strong><span style="color:#900">WHAT IS IT?</span></strong>
+* In its simplest form, the <strong>Factory Method</strong> is a design pattern that encapsulates instantiation.
 * It defines an interface for instantiating objects.  
 * The interface does not need to know the type of object it is required to instantiate.  
 * The actual object it returns might be an instance of a subclass.
@@ -26,7 +26,7 @@ categories: js
 The Simple Factory suggests replacing direct object creation (using a new operator) with a call to a special `factory` method. The constructor call should be moved inside that method. Objects returned by factory methods are often referred to as `products`.  The `Simple Factory` is the most basic implementation of the Factory Pattern.  
 
 ```ruby
-FACTORY METHOD SETUP : DONUT CLASSES
+# FACTORY METHOD SETUP : DONUT CLASSES
 
 module Donut
   def filling
@@ -85,9 +85,9 @@ class PlainDonut
 end
 ```
 &nbsp;  
-     
+
 ```ruby
-SIMPLE FACTORY IMPLEMENTATION  
+# SIMPLE FACTORY IMPLEMENTATION  
 
 class DonutFactory
   def make_donut(type)
@@ -114,7 +114,7 @@ donut_factory.make_donut(:chocolate)
 The Factory Method defines an interface for creating Factories that will each return an object by deferring to the Factory's subclasses on which type of object to instantiate. A superclass specifies all standard and generic behavior (using pure virtual "placeholders" for creation steps), and then delegates the creation details to subclasses that are supplied by the client.  
 
 ```ruby
-FACTORY METHOD IMPLEMENTATION  
+# FACTORY METHOD IMPLEMENTATION  
 
 module DonutFactory
   def make_donut
@@ -161,7 +161,7 @@ random_donut_factory.make_donut
 * In the above example, multiple factories are created.
 * Each `factory` returns a single element or `product`.
 * Each `factory can encapsulate different computations` to return different products, such as a mini donut or a random donut.
-* All `products` returned by each factory respond to the same methods, `filling` and `price`. 
+* All `products` returned by each factory respond to the same methods, `filling` and `price`.
 &nbsp;  
 &nbsp;     
 
@@ -169,7 +169,7 @@ random_donut_factory.make_donut
 The Abstract Factory defines an interface for creating Factories that will  each return multiple related objects without explicitly specifying their classes.  
 
 ```ruby
-ABSTRACT FACTORY IMPLEMENTATION  
+# ABSTRACT FACTORY IMPLEMENTATION  
 
 module UI_Factory
   def create_menu
@@ -186,7 +186,7 @@ module UI_Factory
   end
 end
 
-class MacOSFactory 
+class MacOSFactory
   include UI_Factory
 
   def create_menu
@@ -221,7 +221,7 @@ class IOSFactory
   end
 end
 
-MacOSFactory.create_elements 
+MacOSFactory.create_elements
 WindowsFactory.create_elements  
 IOSFactory.create_elements  
 ```
@@ -234,16 +234,16 @@ IOSFactory.create_elements
 <strong><span style="color:#900;">SIMILARITIES TO THE TEMPLATE PATTERN</span></strong>  
 &nbsp;    
 The Template pattern and the Factory pattern are similar in that both leave the task of implementation to subclasses.
-* In the Factory method, a superclass defines an interface to create an object. Subclasses decide which concrete class to instantiate. 
-* In the Template Method pattern, a compile-time algorithm is selected by subclassing. 
-* If instantiation is not involved, it is not a Factory. 
+* In the Factory method, a superclass defines an interface to create an object. Subclasses decide which concrete class to instantiate.
+* In the Template Method pattern, a compile-time algorithm is selected by subclassing.
+* If instantiation is not involved, it is not a Factory.
 &nbsp;  
 &nbsp;  
 
 <strong><span style="color:#900;">TYPES OF INPUTS AND OUTPUTS</span></strong>  
 * The Factory Pattern can take different types of inputs that might specify what type of object should be created and/or the parameters required by the instantiation methods it encapsulates, such as the `size` parameter in the case of `MiniDonuts`.
-* However, it produces outputs of the same type, or different subtypes of the same type, e.g. different types of donuts. 
-* Whether the outputs are of the same type or different subtypes, they must respond to the same messages, e.g. `.filling` and `.price`. 
+* However, it produces outputs of the same type, or different subtypes of the same type, e.g. different types of donuts.
+* Whether the outputs are of the same type or different subtypes, they must respond to the same messages, e.g. `.filling` and `.price`.
 
 &nbsp;  
 <strong><span style="color:#900;">WHEN TO USE IT</span></strong>   
