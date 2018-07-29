@@ -171,7 +171,7 @@ The Abstract Factory defines an interface for creating Factories that will  each
 ```ruby
 # ABSTRACT FACTORY IMPLEMENTATION  
 
-module UI_Factory
+module UI_Elements
   def create_menu
     "placeholder for menu implementation"
   end
@@ -187,7 +187,7 @@ module UI_Factory
 end
 
 class MacOSFactory
-  include UI_Factory
+  include UI_Elements
 
   def create_menu
     MacOSMenu.new
@@ -199,7 +199,7 @@ class MacOSFactory
 end
 
 class WindowsFactory
-  include UI_Factory
+  include UI_Elements
   def create_menu
     WindowsMenu.new
   end
@@ -210,7 +210,7 @@ class WindowsFactory
 end
 
 class IOSFactory
-  include UI_Factory
+  include UI_Elements
 
   def create_menu
     IOSMenu.new
@@ -219,15 +219,31 @@ class IOSFactory
   def create_button
     IOSButton.new
   end
-end
+end 
 
-MacOSFactory.create_elements
-WindowsFactory.create_elements  
-IOSFactory.create_elements  
+class ApplicationUIFactory
+  def create_ui_elements(type)
+    if type == :mac
+      mac_os_factory = MacOSFactory.new
+      mac_os_factory.create_elements
+    elsif type == :windows
+      windows_factory = WindowsFactory.new
+      windows_factory.create_elements
+    elsif type == :ios
+      ios_factory = IOSFactory.new
+      ios_factory.create_elements
+    end
+  end
+end 
+
+application_ui_factory = ApplicationUIFactory.new
+application_ui_factory.create_ui_elements(:mac)   
 ```
 * Here too multiple factories are created.
 * Each `factory` returns multiple elements or `products`; a `menu` and a `button`.
 * Each set of elements created relates to each other, as in parts of a system.  
+* The above method does not know that a set of Mac OS elements will be made until runtime when it is passed a `type` of `:mac`.
+* Our application allows the factory subtypes to handle instantiation of a new set of UI elements.
 &nbsp;  
 &nbsp;     
 
