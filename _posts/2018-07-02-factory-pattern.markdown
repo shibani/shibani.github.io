@@ -242,8 +242,8 @@ application_ui_factory.create_ui_elements(:mac)
 * Here too multiple factories are created.
 * Each `factory` returns multiple elements or `products`; a `menu` and a `button`.
 * Each set of elements created relates to each other, as in parts of a system.  
-* The above method does not know that a set of Mac OS elements will be made until runtime when it is passed a `type` of `:mac`.
-* Our application allows the factory subtypes to handle instantiation of a new set of UI elements.
+* The above method does not know that a set of Mac OS elements will be created until runtime when it is passed a `type` of `:mac`.
+* Our application allows the factory subtypes to handle instantiation of each new set of UI elements.
 &nbsp;  
 &nbsp;     
 
