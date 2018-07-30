@@ -116,51 +116,62 @@ The Factory Method defines an interface for creating Factories that will each re
 ```ruby
 # FACTORY METHOD IMPLEMENTATION  
 
-module DonutFactory
+module DonutMaker
   def make_donut
     "placeholder for make_Donut implementation"
   end
 end
 
-class MiniDonutFactory
-  include DonutFactory
-
-  def make_donut(:type)
-    if type == :chocolate
-      ChocolateDonut.new("mini")
-    elsif type == :jelly
-      JellyDonut.new("mini")
-    elsif type == :plain
-      PlainDonut.new("mini")
-    end
-  end
-end
-
 class RandomDonutFactory
-  include DonutFactory
+  include DonutMaker
 
   def make_donut
-    type = [:chocolate, :jelly, :plain].sample
+    flavor = [:chocolate, :jelly, :plain].sample
 
-    if type == :chocolate
+    if flavor == :chocolate
       ChocolateDonut.new
-    elsif type == :jelly
+    elsif flavor == :jelly
       JellyDonut.new
-    elsif type == :plain
+    elsif flavor == :plain
       PlainDonut.new
     end
   end
 end
 
-mini_donut_factory = MiniDonutFactory.new
-mini_donut_factory.make_donut(:chocolate)  
+class MiniDonutFactory
+  include DonutMaker
 
-random_donut_factory = RandomDonutFactory.new
-random_donut_factory.make_donut
+  def make_donut(flavor)
+    if flavor == :chocolate
+      ChocolateDonut.new("mini")
+    elsif flavor == :jelly
+      JellyDonut.new("mini")
+    elsif flavor == :plain
+      PlainDonut.new("mini")
+    end
+  end
+end
+
+class DonutFactory
+  def create_donut(type, flavor=nil)
+    if type == :random
+      random_donut_factory = RandomDonutFactory.new
+      random_donut_factory.make_donut
+    elsif type == :mini
+      mini_donut_factory = MiniDonutFactory.new
+      mini_donut_factory.make_donut(flavor)  
+    end
+  end
+end
+
+donut_factory = DonutFactory.new
+donut_factory.create_donut(:random) 
+donut_factory.create_donut(:mini, :chocolate) 
 ```
 * In the above example, multiple factories are created.
 * Each `factory` returns a single element or `product`.
-* Each `factory can encapsulate different computations` to return different products, such as a mini donut or a random donut.
+* Each `factory can encapsulate different computations` to return different `products`, such as a `mini donut` or a `random donut`.
+* The application does not know the type of `factory` or `product` that will be created until runtime.
 * All `products` returned by each factory respond to the same methods, `filling` and `price`.
 &nbsp;  
 &nbsp;     
@@ -171,7 +182,7 @@ The Abstract Factory defines an interface for creating Factories that will  each
 ```ruby
 # ABSTRACT FACTORY IMPLEMENTATION  
 
-module UI_Factory
+module UI_Elements
   def create_menu
     "placeholder for menu implementation"
   end
@@ -187,7 +198,7 @@ module UI_Factory
 end
 
 class MacOSFactory
-  include UI_Factory
+  include UI_Elements
 
   def create_menu
     MacOSMenu.new
@@ -199,7 +210,7 @@ class MacOSFactory
 end
 
 class WindowsFactory
-  include UI_Factory
+  include UI_Elements
   def create_menu
     WindowsMenu.new
   end
@@ -210,7 +221,7 @@ class WindowsFactory
 end
 
 class IOSFactory
-  include UI_Factory
+  include UI_Elements
 
   def create_menu
     IOSMenu.new
@@ -219,15 +230,31 @@ class IOSFactory
   def create_button
     IOSButton.new
   end
-end
+end 
 
-MacOSFactory.create_elements
-WindowsFactory.create_elements  
-IOSFactory.create_elements  
+class ApplicationUIFactory
+  def create_ui_elements(type)
+    if type == :mac
+      mac_os_factory = MacOSFactory.new
+      mac_os_factory.create_elements
+    elsif type == :windows
+      windows_factory = WindowsFactory.new
+      windows_factory.create_elements
+    elsif type == :ios
+      ios_factory = IOSFactory.new
+      ios_factory.create_elements
+    end
+  end
+end 
+
+application_ui_factory = ApplicationUIFactory.new
+application_ui_factory.create_ui_elements(:mac)   
 ```
 * Here too multiple factories are created.
 * Each `factory` returns multiple elements or `products`; a `menu` and a `button`.
 * Each set of elements created relates to each other, as in parts of a system.  
+* The above method does not know that a set of Mac OS elements will be created until runtime when it is passed a `type` of `:mac`.
+* Our application allows the factory subtypes to handle instantiation of each new set of UI elements.
 &nbsp;  
 &nbsp;     
 
