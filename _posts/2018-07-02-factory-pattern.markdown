@@ -165,8 +165,8 @@ class DonutFactory
 end
 
 donut_factory = DonutFactory.new
-donut_factory.create_donut(:random) 
-donut_factory.create_donut(:mini, :chocolate) 
+donut_factory.create_donut(:random)
+donut_factory.create_donut(:mini, :chocolate)
 ```
 * In the above example, multiple factories are created.
 * Each `factory` returns a single element or `product`.
@@ -230,7 +230,7 @@ class IOSFactory
   def create_button
     IOSButton.new
   end
-end 
+end
 
 class ApplicationUIFactory
   def create_ui_elements(type)
@@ -245,7 +245,7 @@ class ApplicationUIFactory
       ios_factory.create_elements
     end
   end
-end 
+end
 
 application_ui_factory = ApplicationUIFactory.new
 application_ui_factory.create_ui_elements(:mac)   
@@ -268,9 +268,9 @@ The Template pattern and the Factory pattern are similar in that both leave the 
 &nbsp;  
 
 <strong><span style="color:#900;">TYPES OF INPUTS AND OUTPUTS</span></strong>  
-* The Factory Pattern can take different types of inputs that might specify what type of object should be created and/or the parameters required by the instantiation methods it encapsulates, such as the `size` parameter in the case of `MiniDonuts`.
+* The Factory Pattern can take different types of inputs that might specify what type of object should be created.
 * However, it produces outputs of the same type, or different subtypes of the same type, e.g. different types of donuts.
-* Whether the outputs are of the same type or different subtypes, they must respond to the same messages, e.g. `.filling` and `.price`.
+* Whether the outputs are of the same type or different subtypes, they will respond to the same messages, e.g. `.filling` and `.price`.
 
 &nbsp;  
 <strong><span style="color:#900;">WHEN TO USE IT</span></strong>   
