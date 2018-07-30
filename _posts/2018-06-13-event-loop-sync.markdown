@@ -4,32 +4,38 @@ title:  "The JS Event Loop - Synchronous"
 date:   2018-06-13 13:23:55 -0500
 categories: js
 ---
-<style type="text/css">
-  .code{
-    font-family:"Courier New", Courier, monospace;
-  }
-  .center{
-    text-align:center;
-  }
-</style>
+
+![Synchronous JS Event Loop]({{ "assets/images/js-event-loop-sync.png"| absolute_url }})
 
 <h4 style="color:#d14">Sequence of Events</h4>  
 
-1. We define the <span class="code">sayHi() function</span>.
-2. We define the <span class="code">sayBye() function</span>.
-3. We set up a <span class="code">setTimeOut function</span> to call <span class="code">sayHi</span> at a certain time, in this case, 0 milliseconds.
-4. The  <span class="code">setTimeout function</span> is sent to the <span class="code">GLOBAL EXECUTION CONTEXT</span> and executes because of the parentheses.
-5. Since <span class="code">setTimeOut</span> is a <span class="code">web browser API function</span>, its callback <span class="code">sayHi</span> is sent from the <span class="code">GLOBAL EXECUTION CONTEXT</span> to the <span class="code">web browser APIs</span> .
-  * The <span class="code">web browser APIs</span> handle the <span class="code">sayHi function</span> and send it to the <span class="code">CALLBACK QUEUE</span> at 0 milliseconds).
-  * <span class="code">setTimeout’s callback function</span>, i.e. <span class="code">sayHi</span> is not allowed back on the <span class="code">CALL STACK</span> until all the code in the <span class="code">GLOBAL EXECUTION CONTEXT</span> completes and the <span class="code">CALL STACK</span> is empty.
-6. Meanwhile control flow goes back to the <span class="code">GLOBAL EXECUTION CONTEXT</span> and we hit the <span class="code">sayBye() function</span> next.
-7. <span class="code">sayBye</span> gets sent to the <span class="code">CALL STACK</span>.
-8. The <span class="code">EVENT LOOP</span> is a constantly running process that checks whether the <span class="code">CALL STACK</span> and <span class="code">CALLBACK QUEUE</span> are empty.
-9. It will always allow the items in the <span class="code">CALL STACK</span> to execute first.
-10. <strong><span class="code">sayBye</span> executes, thus appearing first, and we will see 'Thanks for visiting' in the console.</strong>
-11. <span class="code">sayBye</span> then gets removed from the <span class="code">CALL STACK</span>.
-12. Only once the <span class="code">CALL STACK</span> and the <span class="code">GLOBAL EXECUTION CONTEXT</span> are empty, are the functions in the <span class="code">CALLBACK QUEUE</span> pulled onto the <span class="code">CALL STACK</span> and allowed to execute.
-13. <strong>It's at this point that we'll see a 'Hello World' appear in the console.</strong>
+1. We define the `sayHi()` function.  
+
+2. We define the `sayBye()` function.  
+
+3. We set up a `setTimeOut` function to call `sayHi` at a certain time, in this case, 0 milliseconds.  
+
+4. The  `setTimeout` function is sent to the `GLOBAL EXECUTION CONTEXT` and executes because of the parentheses.  
+
+5. Since `setTimeOut` is a `web browser API` function, its `callback sayHi` is sent from the `GLOBAL EXECUTION CONTEXT` to the `web browser APIs` .  
+  * The `web browser APIs` handle the `sayHi` function and send it to the `CALLBACK QUEUE` at 0 milliseconds).
+  * `setTimeout’s callback` function, i.e. `sayHi` is not allowed back on the `CALL STACK` until all the code in the `GLOBAL EXECUTION CONTEXT` completes and the `CALL STACK` is empty.  
+&nbsp;  
+6. Meanwhile control flow goes back to the `GLOBAL EXECUTION CONTEXT` and we hit the `sayBye()` function next.  
+
+7. `sayBye` gets sent to the `CALL STACK`.  
+
+8. The `EVENT LOOP` is a constantly running process that checks whether the `CALL STACK` and `CALLBACK QUEUE` are empty.  
+
+9. It will always allow the items in the `CALL STACK` to execute first.  
+
+10. <strong>`sayBye` executes, thus appearing first, and we will see 'Thanks for visiting' in the console.</strong>  
+
+11. `sayBye` then gets removed from the `CALL STACK`.  
+
+12. Only once the `CALL STACK` and the `GLOBAL EXECUTION CONTEXT` are empty, are the functions in the `CALLBACK QUEUE` pulled onto the `CALL STACK` and allowed to execute.  
+
+13. <strong>It's at this point that we'll see a 'Hello World' appear in the console.</strong>  
 &nbsp;  
 &nbsp;  
 
@@ -37,6 +43,3 @@ categories: js
 
 1. Thanks for visiting  
 2. Hello World
-
-
-![Synchronous JS Event Loop]({{ "assets/images/js-event-loop-sync.png"| absolute_url }})
