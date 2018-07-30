@@ -167,7 +167,6 @@ end
 donut_factory = DonutFactory.new
 donut_factory.create_donut(:random) 
 donut_factory.create_donut(:mini, :chocolate) 
-
 ```
 * In the above example, multiple factories are created.
 * Each `factory` returns a single element or `product`.
