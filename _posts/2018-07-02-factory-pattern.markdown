@@ -171,7 +171,8 @@ donut_factory.create_donut(:mini, :chocolate)
 ```
 * In the above example, multiple factories are created.
 * Each `factory` returns a single element or `product`.
-* Each `factory can encapsulate different computations` to return different products, such as a `mini donut` or a `random donut`.
+* Each `factory can encapsulate different computations` to return different `products`, such as a `mini donut` or a `random donut`.
+* The application does not know that type of `factory` or `product` will be created until runtime.
 * All `products` returned by each factory respond to the same methods, `filling` and `price`.
 &nbsp;  
 &nbsp;     
