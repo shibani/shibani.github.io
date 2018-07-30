@@ -116,51 +116,62 @@ The Factory Method defines an interface for creating Factories that will each re
 ```ruby
 # FACTORY METHOD IMPLEMENTATION  
 
-module DonutFactory
+module DonutMaker
   def make_donut
     "placeholder for make_Donut implementation"
   end
 end
 
-class MiniDonutFactory
-  include DonutFactory
-
-  def make_donut(:type)
-    if type == :chocolate
-      ChocolateDonut.new("mini")
-    elsif type == :jelly
-      JellyDonut.new("mini")
-    elsif type == :plain
-      PlainDonut.new("mini")
-    end
-  end
-end
-
 class RandomDonutFactory
-  include DonutFactory
+  include DonutMaker
 
   def make_donut
-    type = [:chocolate, :jelly, :plain].sample
+    flavor = [:chocolate, :jelly, :plain].sample
 
-    if type == :chocolate
+    if flavor == :chocolate
       ChocolateDonut.new
-    elsif type == :jelly
+    elsif flavor == :jelly
       JellyDonut.new
-    elsif type == :plain
+    elsif flavor == :plain
       PlainDonut.new
     end
   end
 end
 
-mini_donut_factory = MiniDonutFactory.new
-mini_donut_factory.make_donut(:chocolate)  
+class MiniDonutFactory
+  include DonutMaker
 
-random_donut_factory = RandomDonutFactory.new
-random_donut_factory.make_donut
+  def make_donut(flavor)
+    if flavor == :chocolate
+      ChocolateDonut.new("mini")
+    elsif flavor == :jelly
+      JellyDonut.new("mini")
+    elsif flavor == :plain
+      PlainDonut.new("mini")
+    end
+  end
+end
+
+class DonutFactory
+  def create_donut(type, flavor=nil)
+    if type == :random
+      random_donut_factory = RandomDonutFactory.new
+      random_donut_factory.make_donut
+    elsif type == :mini
+      mini_donut_factory = MiniDonutFactory.new
+      mini_donut_factory.make_donut(flavor)  
+    end
+  end
+end
+
+donut_factory = DonutFactory.new
+donut_factory.create_donut(:random) 
+donut_factory.create_donut(:mini, :chocolate) 
+
 ```
 * In the above example, multiple factories are created.
 * Each `factory` returns a single element or `product`.
-* Each `factory can encapsulate different computations` to return different products, such as a mini donut or a random donut.
+* Each `factory can encapsulate different computations` to return different products, such as a `mini donut` or a `random donut`.
 * All `products` returned by each factory respond to the same methods, `filling` and `price`.
 &nbsp;  
 &nbsp;     
