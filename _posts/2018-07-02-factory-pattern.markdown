@@ -2,13 +2,8 @@
 layout: post
 title:  "The Factory Pattern"
 date:   2018-07-02 15:23:55 -0500
-categories: js
+categories: patterns
 ---
-<style type="text/css">
-  .code{
-    font-family:"Courier New", Courier, monospace;
-  }
-</style>
 
 ![donuts]({{ "assets/images/donuts.jpg"| absolute_url }})
 &nbsp;  
