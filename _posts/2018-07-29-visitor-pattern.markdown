@@ -14,13 +14,13 @@ categories: patterns
 ![game of thrones]({{ "assets/images/game-of-thrones.png"| absolute_url }})
 &nbsp;  
 
-<strong><span style="color:#900">WHAT IS IT?</span></strong>  
+**<span style="color:#900">WHAT IS IT?</span>**  
 
-Your team just got a new project assigned to you and you're all really excited because it's building out an interactive feature for the <strong>Game of Thrones</strong> website!  
+Your team just got a new project assigned to you and you're all really excited because it's building out an interactive feature for the **Game of Thrones** website!  
 
 There's only one catch -- there must be minimal changes to the legacy code that exists and was built by another dev shop.  
 
-Enter the ~~dragon~~ <strong>visitor pattern</strong>.  
+Enter the ~~dragon~~ **visitor pattern**.  
 
 ![dragon]({{ "assets/images/got-dragon.png"| absolute_url }}){: .right-image }
 
@@ -33,19 +33,19 @@ Enter the ~~dragon~~ <strong>visitor pattern</strong>.
 * You can create completely different methods depending on the class used
 * This pattern promotes speed of extensibility.    
 
-<strong><span style="color:#900">HOW THE INTERFACES WORK</span></strong>  
+**<span style="color:#900">HOW THE INTERFACES WORK</span>**  
 
-<strong>The Visitor interface</strong>  
+**1. The Visitor interface**  
 We implement a `Visitor` interface (or module) and add one method to it.  This is the `visit` method.  All visitors that we subsequently create will have to implement this `visit` method.  
 
 We then create classes to implement the behavior that we would like the original class in the legacy code to include.  We include the `Visitor` module in the new classes we've created, so they now `have` `visitor` behavior.   
 
-<strong>The Visitable interface</strong>  
+**2. The Visitable interface**  
 We do need to do just a little work in the original class for our pattern to come together.  
 
 We go into the original class in the legacy code and add the `Visitable` interface (or module) to it.  This `Visitable` module also defines just one method, the `accept` method.  
 
-<strong>This</strong> `accept` <strong>method takes in a</strong> `visitor` <strong>and enables that visitor's</strong> `visit` <strong>method to accept an object which is an instance of the original class.</strong> We can now extend this object easily!  
+**This** `accept` **method takes in a** `visitor` **and enables that visitor's** `visit` **method to accept an object which is an instance of the original class.** We can now extend this object easily!  
 
 To summarize, the newly added and minimally modified code allows us to gain access to objects instantiated by the original class and add behavior to them without modifying the original class any further.  
 
@@ -63,7 +63,7 @@ end
 ```
 &nbsp;  
 ```ruby
-# STEP 1. CREATE MODULES TO EXTEND THE CLASS
+# STEP 1. CREATE THE VISITOR AND VISITABLE MODULES TO EXTEND THE CLASS
 
 module Visitor
   def visit(object)  
@@ -145,12 +145,12 @@ lannister.accept(cersei)
 ```  
 &nbsp;  
 &nbsp;
-<strong><span style="color:#900">PLAY AROUND WITH IT IN THIS REPL!</span></strong>
+**<span style="color:#900">PLAY AROUND WITH IT IN THIS REPL!</span>**
 &nbsp;
 &nbsp;
 <iframe height="1200px" width="100%" src="https://repl.it/@shibani77/SomberDazzlingDownloads?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 &nbsp;  
 &nbsp;  
-<strong><span style="color:#900">WHEN TO USE IT</span></strong>  
+**<span style="color:#900">WHEN TO USE IT</span>**  
 
-When there is little to no access to the original class, or the ability to make modifications to it are severely limited.  
+When there is limited access to the original class, and the ability to make direct modifications to it is curtailed.  
