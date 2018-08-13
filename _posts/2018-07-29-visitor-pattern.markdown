@@ -49,9 +49,6 @@ We go into the original class in the legacy code and add the `Visitable` interfa
 
 To summarize, the newly added and minimally modified code allows us to gain access to objects instantiated by the original class and add behavior to them without modifying the original class any further.  
 
-<strong><span style="color:#900">WHEN TO USE IT</span></strong>  
-
-When there is little to no access to the original class, or the ability to make modifications to it are severely limited.  
 &nbsp;  
 ```ruby
 # CLASS THAT WE WOULD LIKE TO EXTEND WITHOUT CHANGING  
@@ -152,3 +149,8 @@ lannister.accept(cersei)
 &nbsp;
 &nbsp;
 <iframe height="1200px" width="100%" src="https://repl.it/@shibani77/SomberDazzlingDownloads?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<strong><span style="color:#900">WHEN TO USE IT</span></strong>  
+&nbsp;
+&nbsp;
+When there is little to no access to the original class, or the ability to make modifications to it are severely limited.  
