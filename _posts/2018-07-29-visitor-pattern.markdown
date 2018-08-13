@@ -149,8 +149,8 @@ lannister.accept(cersei)
 &nbsp;
 &nbsp;
 <iframe height="1200px" width="100%" src="https://repl.it/@shibani77/SomberDazzlingDownloads?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-
+&nbsp;  
+&nbsp;  
 <strong><span style="color:#900">WHEN TO USE IT</span></strong>  
-&nbsp;
-&nbsp;
+
 When there is little to no access to the original class, or the ability to make modifications to it are severely limited.  
