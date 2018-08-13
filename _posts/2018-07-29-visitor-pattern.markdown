@@ -4,6 +4,12 @@ title:  "The Visitor Pattern"
 date:   2018-07-29 15:23:55 -0500
 categories: patterns
 ---
+<style type="text/css">
+  .right-image {
+    float:right;
+    margin-left:20px;
+  }
+</style>
 
 ![game of thrones]({{ "assets/images/game-of-thrones.png"| absolute_url }})
 &nbsp;  
@@ -14,7 +20,9 @@ Your team just got a new project assigned to you and you're all really excited b
 
 There's only one catch -- there must be minimal changes to the legacy code that exists and was built by another dev shop.  
 
-Enter the ~~dragon~~ <strong>visitor pattern</strong>!!  
+Enter the ~~dragon~~ <strong>visitor pattern</strong>.  
+
+![dragon]({{ "assets/images/got-dragon.png"| absolute_url }}){: .right-image }
 
 * The visitor pattern is a way to add methods to classes of different types with minimal altering of those classes.    
 * It allows you to define external classes that can extend other classes without any major editing to them.  
