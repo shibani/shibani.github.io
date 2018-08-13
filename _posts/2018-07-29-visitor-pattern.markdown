@@ -48,6 +48,10 @@ We go into the original class in the legacy code and add the `Visitable` interfa
 <strong>This</strong> `accept` <strong>method takes in a</strong> `visitor` <strong>and enables that visitor's</strong> `visit` <strong>method to accept an object which is an instance of the original class.</strong> We can now extend this object easily!  
 
 To summarize, the newly added and minimally modified code allows us to gain access to objects instantiated by the original class and add behavior to them without modifying the original class any further.  
+
+<strong><span style="color:#900">WHEN TO USE IT</span></strong>  
+
+When there is little to no access to the original class, or the ability to make modifications to it are severely limited.  
 &nbsp;  
 ```ruby
 # CLASS THAT WE WOULD LIKE TO EXTEND WITHOUT CHANGING  
