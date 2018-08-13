@@ -26,7 +26,7 @@ A benefit having such similarly named methods or **messages** is that other clas
 
 Resulting in the conclusion that **if an object quacks like a duck and walks like a duck then its class is immaterial, it <span style="color:#d14;">IS</span> a duck**
 
-For an example of a duck type in action, we might look at a vacationer planning a vacation.  In this example, they have no idea of the exact type of destination being passed, but instead trust that the duck typed destination will implement the "book_flight" method, consequently telling the vacationer which airline they should book their flight on in order to plan their vacation.
+For an example of a duck type in action, we might look at a vacationer planning a vacation.  In this example, they have no idea of the exact type of destination being passed, but instead trust that the duck typed destination will implement the `book_flight` method, consequently telling the vacationer which airline they should book their flight on in order to plan their vacation.
 
 What we want is to have our application respond to something along the lines of:  
 
@@ -105,15 +105,15 @@ puts result[:items]  #=> 'shorts, swim things, spf'
 
 ```
 
-As we can see, using the same **plan_vacation** method, in the first case we get the flight variable to be <span style="color:#1a92bb;">'SpaceX's BFR rocket system'</span><span style="font-size:16px;">:rocket:</span>, and in the second case we get a flight variable that's set to <span style="color:#1a92bb;">'Air Tahiti'</span>
+As we can see, using the same **plan_vacation** method, in the first case we get the flight variable to be `SpaceX's BFR rocket system`<span style="font-size:16px;">:rocket:</span>, and in the second case we get a flight variable that's set to `Air Tahiti`
 
-And for the items variable, in the first case we get <span style="color:#1a92bb;">'space suit, oxygen'</span>, and in the second, <span style="color:#1a92bb;">'shorts, swim things, spf'</span>.
+And for the items variable, in the first case we get `space suit, oxygen`, and in the second, `shorts, swim things, spf`.
 
-By now it's clear that it would be very simple to add another destination that implemented the <span style="color:#1a92bb;">book_flight</span> and <span style="color:#1a92bb;">pack items</span> methods to this list, making our application a cinch to use, while promoting extendability and flexibility.
+By now it's clear that it would be very simple to add another destination that implemented the `book_flight` and `pack items` methods to this list, making our application a cinch to use, while promoting extendability and flexibility.
 
-The <span style="color:#1a92bb;">BoraBora</span>, <span style="color:#1a92bb;">Oslo</span>, <span style="color:#1a92bb;">Wellington</span> and <span style="color:#1a92bb;">Mars</span> classes all achieve **polymorphism<sup>1</sup> by way of duck types**.
+The `BoraBora`, `Oslo`, `Wellington` and `Mars` classes all achieve **polymorphism<sup>1</sup> by way of duck types**.
 
-The example above makes it easy to see how we could also leverage **inheritance** to achieve a similar result.  If we had a <span style="color:#1a92bb;">super class named Destination</span> that implemented both the <span style="color:#1a92bb;">book_flight</span> and <span style="color:#1a92bb;">pack_items</span> methods, and all subsequent destinations were to inherit from it, we would have **polymorphism by way of inheritance**.
+The example above makes it easy to see how we could also leverage **inheritance** to achieve a similar result.  If we had a `super class named Destination` that implemented both the `book_flight` and `pack_items` methods, and all subsequent destinations were to inherit from it, we would have **polymorphism by way of inheritance**.
 
 **A caveat:** When implementing my first duck, I initially set the duck type up in my application to take in an array and return a string in one instance, and to return a hash in the other. I then learned that duck types must take in the same kind of input and return the same kind of output to eliminate unnecessary complexity, and to work as expected.
 
@@ -135,7 +135,7 @@ There are a few ways to implement polymorphism. Inheritance is one, duck typing 
 
   * Unlike dynamically-typed languages, most (though not all) statically-typed languages require that you declare the type of each variable and every method parameter.
   * Dynamic typing is in fact the very feature that paves the way for duck-typing.
-  * If we knew the class of the object we were sending a message to, we would not need to send an 'across class' message.
+  * If we knew the class of the object we were sending a message to, we would not need to send an `across class` message.
   * On the other hand, searching to create across class messages helps us reveal stable abstractions, and areas where our code can be safely and easily extended in the future.<br/><br/>
 
 <span style="font-size:12px;">
