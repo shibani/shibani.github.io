@@ -15,7 +15,9 @@ categories: docker
 Docker is a tool that helps us build, deploy, and run applications from within isolated environments on our computer called Containers. Containers are very similar to Virtual Machines (VMs) but they differ from VMs in that they share the kernel of the system they’re running on while allocating different segments of hard disk space and CPU resources similar to VMs.  This gives Docker Containers a significant performance boost when compared with VMs.    
 
 **Kernel**  
-Every OS has a kernel - the kernel is a running software process that governs access between the programs that run on your computer and the physical hardware it is built of. When an application wants to save a file to the hard drive, the kernel is responsible for taking that file and persisting it to the hard disk.  
+Every OS has a kernel - the kernel is a running software process that governs access between the programs that run on your computer and the physical hardware it is built of. When an application wants to save a file to the hard drive, the kernel is responsible for taking that file and persisting it to the hard disk. 
+
+**[Add image here]**  
 
 **Containers**  
 Containers can easily be created from Docker Images and guarantee that whatever machine they’re installed on, they will reproduce the same environment time and time again, promoting flexibility and portability.  Developers can rest assured that their containerized application will run on any other machine regardless of custom settings and software versions.  
@@ -30,7 +32,9 @@ The server or `Docker Daemon` in turn does the work of executing these commands,
 
 **DockerFile**  
 A Dockerfile is a file that contain a list of instructions on how to set up a container.  These are commands a user could successively call on the command line to assemble a project. 
-Dockerfiles can be created from scratch or they can be found on `Docker Hub`.  Dockerfiles can be used as `parent images` to compile or provide a basic framework for other dockerfiles. 
+Dockerfiles can be created from scratch or they can be found on `Docker Hub`.  Dockerfiles can be used as `parent images` to compile or provide a basic framework for other dockerfiles.  
+
+**[Add Dockerfile example here]**  
 
 **Docker Image**  
 Docker Images are snapshots of a docker container. Users can create a Docker image by running `docker build` in a directory with a dockerfile. The image can then by turned into container by calling `docker run` on the image.  
@@ -44,3 +48,26 @@ Docker Hub is the Docker repository of Dockerfiles.  It is located at at `hub.do
 
 **Docker Compose**  
 Docker Compose is a tool for running multi-container applications.  Docker compose is helpful to start up and run an application that relies on a combination of tools such as an MVC framework container and a database container. 
+
+**[Add docker-dompose example here]** 
+
+**To build your project**  
+1. Start by creating a folder for your project. cd into the root.
+2. Creating the `Dockerfile` above. <sup>1</sup>
+Dockerfile will be discussed later in this post.      
+3. Then create the `docker-compose.yml` file. <sup>2</sup>  
+4. Add the mix file and change its permissions to make it executable by running `chmod +x mix` in terminal while in the root directory of your project.   
+5. Then run `docker build -t <name_of_your_image> .`.  
+Here the -t is a flag that sets the `tag` of your project.   
+6. You should now be able to run `docker images` and see your newly created image listed. At this point it is an inert image and is not running.  
+7. Now run `docker-compose build` to get an image of your other services like your database created, and your volumes built. <sup>3</sup>
+8. In the root directory, run 
+`./mix deps.get  
+./mix ecto.create  
+./mix ecto.migrate`  
+9. cd into the `src` folder and run `cd assets && npm install`
+10. Finally cd one level back up to your root directory and run `docker-compose up`  
+
+**Your container should now be up.**  
+- Verify this by running `docker container ls`.  You should see 2 containers up and running.  
+- Navigate to `localhost:4000` to view your site in a browser
