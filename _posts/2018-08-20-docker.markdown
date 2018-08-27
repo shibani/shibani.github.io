@@ -1,0 +1,46 @@
+---
+layout: post
+title:  "Docker"
+date:   2018-08-20 15:23:55 -0500
+categories: docker
+---
+<style type="text/css">
+  .right-image {
+    float:right;
+    margin-left:20px;
+  }
+</style>
+
+**What is Docker**  
+Docker is a tool that helps us build, deploy, and run applications from within isolated environments on our computer called Containers. Containers are very similar to Virtual Machines (VMs) but they differ from VMs in that they share the kernel of the system they’re running on while allocating different segments of hard disk space and CPU resources similar to VMs.  This gives Docker Containers a significant performance boost when compared with VMs.    
+
+**Kernel**  
+Every OS has a kernel - the kernel is a running software process that governs access between the programs that run on your computer and the physical hardware it is built of. When an application wants to save a file to the hard drive, the kernel is responsible for taking that file and persisting it to the hard disk.  
+
+**Containers**  
+Containers can easily be created from Docker Images and guarantee that whatever machine they’re installed on, they will reproduce the same environment time and time again, promoting flexibility and portability.  Developers can rest assured that their containerized application will run on any other machine regardless of custom settings and software versions.  
+
+In essence, Docker is a platform built around creating and running Containers.  It accomplishes this with the help of:  
+
+**Docker CLI**  
+Docker can be installed by signing up for a Docker account on their website and then downloading and installing the Docker installer package from their website.  The command line interface can be verified by running `Docker version` on the command line in terminal. It allows us to issue commands and sends them to the server.
+
+**Docker Server**  
+The server or `Docker Daemon` in turn does the work of executing these commands, creating images and running containers, etc.  
+
+**DockerFile**  
+A Dockerfile is a file that contain a list of instructions on how to set up a container.  These are commands a user could successively call on the command line to assemble a project. 
+Dockerfiles can be created from scratch or they can be found on `Docker Hub`.  Dockerfiles can be used as `parent images` to compile or provide a basic framework for other dockerfiles. 
+
+**Docker Image**  
+Docker Images are snapshots of a docker container. Users can create a Docker image by running `docker build` in a directory with a dockerfile. The image can then by turned into container by calling `docker run` on the image.  
+
+A Docker image consists of read-only layers each of which represents a Dockerfile instruction. The layers are stacked and each one is a delta of the changes from the previous layer.  
+
+Images are immutable!  If any changes need to be made to the configuration of an image (and subsequently the container), the image needs to be rebuilt from scratch after editing the Dockerfile’s instructions.   
+
+**Docker Hub**  
+Docker Hub is the Docker repository of Dockerfiles.  It is located at at `hub.docker.com`  
+
+**Docker Compose**  
+Docker Compose is a tool for running multi-container applications.  Docker compose is helpful to start up and run an application that relies on a combination of tools such as an MVC framework container and a database container. 
