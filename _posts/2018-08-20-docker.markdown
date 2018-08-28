@@ -12,15 +12,17 @@ categories: docker
 </style>
 
 **What is Docker**  
-Docker is a tool that helps us build, deploy, and run applications from within isolated environments on our computer called Containers. Containers are very similar to Virtual Machines (VMs) but they differ from VMs in that they share the kernel of the system they’re running on while allocating different segments of hard disk space and CPU resources similar to VMs.  This gives Docker Containers a significant performance boost when compared with VMs.    
+Docker is a tool that helps us build, deploy, and run applications from within isolated environments on our computer called Containers. Containers are very similar to Virtual Machines (VMs) but they differ from VMs in that they share the kernel of the system they’re running on while allocating different segments of hard disk space and CPU resources similar to VMs.  This gives Docker Containers a significant performance boost when compared with VMs.  
+
+**Why use it**  
 
 **Kernel**  
-Every OS has a kernel - the kernel is a running software process that governs access between the programs that run on your computer and the physical hardware it is built of. When an application wants to save a file to the hard drive, the kernel is responsible for taking that file and persisting it to the hard disk. 
+Every OS has a kernel - the kernel is a running software process that governs access between the programs that run on your computer and the physical hardware it is built of. When an application wants to save a file to the hard drive, the kernel is responsible for taking that file and persisting it to the hard disk.
 
 **[Add image here]**  
 
 **Containers**  
-Containers can easily be created from Docker Images and guarantee that whatever machine they’re installed on, they will reproduce the same environment time and time again, promoting flexibility and portability.  Developers can rest assured that their containerized application will run on any other machine regardless of custom settings and software versions.  
+Containers can easily be created from Docker Images (see below) and guarantee that whatever machine they’re installed on, they will reproduce the same environment time and time again, promoting flexibility and portability.  Developers can rest assured that their containerized application will run on any other machine regardless of custom settings and software versions.  
 
 In essence, Docker is a platform built around creating and running Containers.  It accomplishes this with the help of:  
 
@@ -28,13 +30,13 @@ In essence, Docker is a platform built around creating and running Containers.  
 Docker can be installed by signing up for a Docker account on their website and then downloading and installing the Docker installer package from their website.  The command line interface can be verified by running `Docker version` on the command line in terminal. It allows us to issue commands and sends them to the server.
 
 **Docker Server**  
-The server or `Docker Daemon` in turn does the work of executing these commands, creating images and running containers, etc.  
+The server or `Docker Daemon` in turn does the work of executing these commands, creating images and running containers, etc. We only communicate with the Docker Server through the Docker CLI.  
 
 **DockerFile**  
-A Dockerfile is a file that contain a list of instructions on how to set up a container.  These are commands a user could successively call on the command line to assemble a project. 
+A Dockerfile is a file that contain a list of instructions on how to set up a container.  These are commands a user could successively call on the command line to assemble a project.
 Dockerfiles can be created from scratch or they can be found on `Docker Hub`.  Dockerfiles can be used as `parent images` to compile or provide a basic framework for other dockerfiles.  
 
-**[Add Dockerfile example here]**  
+**[Link to Dockerfile example here]**  
 
 **Docker Image**  
 Docker Images are snapshots of a docker container. Users can create a Docker image by running `docker build` in a directory with a dockerfile. The image can then by turned into container by calling `docker run` on the image.  
@@ -44,14 +46,17 @@ A Docker image consists of read-only layers each of which represents a Dockerfil
 Images are immutable!  If any changes need to be made to the configuration of an image (and subsequently the container), the image needs to be rebuilt from scratch after editing the Dockerfile’s instructions.   
 
 **Docker Hub**  
-Docker Hub is the Docker repository of Dockerfiles.  It is located at at `hub.docker.com`  
+Docker Hub is the Docker repository of (public and private) Dockerfiles, much like Github is to code.  It is located at at `hub.docker.com`  
 
 **Docker Compose**  
-Docker Compose is a tool for running multi-container applications.  Docker compose is helpful to start up and run an application that relies on a combination of tools such as an MVC framework container and a database container. 
+Docker Compose is a tool for running multi-container applications.  Docker compose is a yml file that can be helpful when starting up and running an application that relies on several tools such as an MVC framework container and a database container.
 
-**[Add docker-dompose example here]** 
+**[Link docker-dompose example here]**  
 
-**To build your project**  
+**Volumes**  
+
+
+<!-- **To build your project**  
 1. Start by creating a folder for your project. cd into the root.
 2. Creating the `Dockerfile` above. <sup>1</sup>       
 3. Then create the `docker-compose.yml` file. <sup>2</sup>  
@@ -60,7 +65,7 @@ Docker Compose is a tool for running multi-container applications.  Docker compo
 Here the -t is a flag that sets the `tag` of your project.   
 6. You should now be able to run `docker images` and see your newly created image listed. At this point it is an inert image and is not running.  
 7. Now run `docker-compose build` to get an image of your other services like your database created, and your `volumes` built. <sup>3</sup>
-8. In the root directory, run 
+8. In the root directory, run
 `./mix deps.get  
 ./mix ecto.create  
 ./mix ecto.migrate`  
@@ -71,4 +76,4 @@ Here the -t is a flag that sets the `tag` of your project.
 - Verify this by running `docker container ls`.  You should see 2 containers up and running.  
 - Navigate to `localhost:4000` to view your site in a browser
 
-**To start and stop your containers**  
+**To start and stop your containers**   -->
