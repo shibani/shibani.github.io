@@ -18,3 +18,9 @@ You can find the source code for Jekyll at GitHub:
 [jekyll-organization]: https://github.com/jekyll -->
 
 This blog features some of the topics I found noteworthy and wanted to learn more about during my apprenticeship at 8th Light.  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+<div style="text-align:center">  
+  <img src="https://media.giphy.com/media/QzOSWXVYyXcdy/giphy.gif" width="600"/>
+</div>
