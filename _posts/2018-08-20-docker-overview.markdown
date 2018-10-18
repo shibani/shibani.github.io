@@ -60,12 +60,13 @@ A `Docker image` consists of read-only layers each of which represents a Dockerf
 
 &nbsp;  
 **Docker Hub**  
-Docker Hub is the Docker repository of (public and private) Dockerfiles, much like Github is to code.  It is located at at `hub.docker.com`  
-
-In essence, Docker is a platform built around creating and running Containers.  It accomplishes this with the help of the `Docker CLI`.  
+Docker Hub is the Docker repository of (public and private) Dockerfiles, much like Github is to code.  It is located at at `hub.docker.com`    
 
 &nbsp;  
 <p style="color:#900; font-weight:bold; text-transform:uppercase;">The Docker CLI</p>  
+
+In essence, Docker is a platform built around creating and running Containers.  It accomplishes this with the help of the `Docker CLI`.
+
 The first step to working with Docker is installing the Docker CLI tools by downloading the Docker CE (Community Edition) package here: <https://www.docker.com/get-started>.  
 
 &nbsp;  
@@ -103,7 +104,7 @@ Much of Docker's the magic happens in `volumes`.
 
 Volumes are specified in the `docker-compose.yml` file, and are Docker's way of persisting data. Volumes help to map and copy files from your local system to your container and back, keeping them continually in sync. You can specify volumes to be read-only by adding an `:ro` flag in your `docker-compose.yml`.  If set, this will mean your volumes will not actively map and copy your local files into your container.
 
-Because of this it is important to use the same containers once they are built and created. The initial create command is `docker-compose up`.  
+In order to continue persisting data and files to volumes, it is important to use the same containers once they are built and created. The initial create command is `docker-compose up`.  
 
 After that, it is recommended to `start` and `stop` your containers gracefully by running `docker start <container_name>` or `docker stop <container_name>`.  
 
