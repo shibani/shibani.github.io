@@ -100,7 +100,7 @@ For more information on setting up a docker-compose.yml file, [see this post](/d
 
 &nbsp;  
 **Volumes**  
-Much of Docker's the magic happens in `volumes`.  
+Much of Docker's magic happens in `volumes`.  
 
 Volumes are specified in the `docker-compose.yml` file, and are Docker's way of persisting data. Volumes help to map and copy files from your local system to your container and back, keeping them continually in sync. You can specify volumes to be read-only by adding an `:ro` flag in your `docker-compose.yml`.  If set, this will mean your volumes will not actively map and copy your local files into your container.
 
