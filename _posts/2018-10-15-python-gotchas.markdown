@@ -36,10 +36,12 @@ categories: docker
   table tr:nth-child(even) {
     background-color: #fff;
   }
-  table th, table td {
-    padding: 0px 0px;!important
+  .first-example table th, .first-example table td
+  .second-example table th, .second-exampe table td{
+    padding: 0px 0px !important
   }
-  table th {
+
+  .mutable-immutable-types table th {
     background-color: #fff;
     border: 1px solid #666;
     border-bottom-color: #666;
