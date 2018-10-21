@@ -36,9 +36,9 @@ categories: docker
   table tr:nth-child(even) {
     background-color: #fff;
   }
-  .first-example table th, .first-example table td
-  .second-example table th, .second-exampe table td{
-    padding: 0px 0px !important
+  .first-example table th, .first-example table td,
+  .second-example table th, .second-example table td{
+    padding: 0px 0px !important;
   }
 
   .mutable-immutable-types table th {
