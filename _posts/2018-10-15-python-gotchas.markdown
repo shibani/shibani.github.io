@@ -20,12 +20,10 @@ categories: docker
     display: flex;
     justify-content:space-evenly;
   }
-
   .mutable-immutable-types{
     margin-top:40px;
     margin-bottom:40px;
   }
-  
   blockquote {
     color: mediumpurple;
     border-left: 4px solid #e8e8e8;
@@ -34,6 +32,9 @@ categories: docker
     letter-spacing: 0px;
     font-style: italic;
     font-weight: bold;
+  }
+  table tr:nth-child(even) {
+    background-color: #fff;
   }
 </style>
 
@@ -62,19 +63,19 @@ In other words, instead of looking like the image on the left below, my board lo
       </colgroup>
       <tbody>
         <tr>
-          <td style="height:50px; border:1px solid #000;font-weight:bold;"> x </td>
-          <td style="height:50px; border:1px solid #000;"> 2 </td>
-          <td style="height:50px; border:1px solid #000;"> 3 </td>
+          <td style="height:50px; width:50px; border:1px solid #000;font-weight:bold;"> x </td>
+          <td style="height:50px; width:50px; border:1px solid #000;"> 2 </td>
+          <td style="height:50px; width:50px; border:1px solid #000;"> 3 </td>
         </tr>
         <tr>
-          <td style="height:50px; border:1px solid #000;"> 4 </td>
-          <td style="height:50px; border:1px solid #000;"> 5 </td>
-          <td style="height:50px; border:1px solid #000;"> 6 </td>
+          <td style="height:50px; width:50px; border:1px solid #000;"> 4 </td>
+          <td style="height:50px; width:50px; border:1px solid #000;"> 5 </td>
+          <td style="height:50px; width:50px; border:1px solid #000;"> 6 </td>
         </tr>
         <tr>
-          <td style="height:50px; border:1px solid #000;"> 7 </td>
-          <td style="height:50px; border:1px solid #000;"> 8 </td>
-          <td style="height:50px; border:1px solid #000;"> 9 </td>
+          <td style="height:50px; width:50px; border:1px solid #000;"> 7 </td>
+          <td style="height:50px; width:50px; border:1px solid #000;"> 8 </td>
+          <td style="height:50px; width:50px; border:1px solid #000;"> 9 </td>
         </tr>
       </tbody>
     </table>
@@ -89,19 +90,19 @@ In other words, instead of looking like the image on the left below, my board lo
         </colgroup>
         <tbody>
           <tr>
-            <td style="height:50px; border:1px solid #000;font-weight:bold;"> x </td>
-            <td style="height:50px; border:1px solid #000;"> 2 </td>
-            <td style="height:50px; border:1px solid #000;"> 3 </td>
+            <td style="height:50px; width:50px; border:1px solid #000;font-weight:bold;"> x </td>
+            <td style="height:50px; width:50px; border:1px solid #000;"> 2 </td>
+            <td style="height:50px; width:50px; border:1px solid #000;"> 3 </td>
           </tr>
           <tr>
-            <td style="height:50px; border:1px solid #000;font-weight:bold;"> x </td>
-            <td style="height:50px; border:1px solid #000;"> 5 </td>
-            <td style="height:50px; border:1px solid #000;"> 6 </td>
+            <td style="height:50px; width:50px; border:1px solid #000;font-weight:bold;"> x </td>
+            <td style="height:50px; width:50px; border:1px solid #000;"> 5 </td>
+            <td style="height:50px; width:50px; border:1px solid #000;"> 6 </td>
           </tr>
           <tr>
-            <td style="height:50px; border:1px solid #000;font-weight:bold;"> x </td>
-            <td style="height:50px; border:1px solid #000;"> 8 </td>
-            <td style="height:50px; border:1px solid #000;"> 9 </td>
+            <td style="height:50px; width:50px; border:1px solid #000;font-weight:bold;"> x </td>
+            <td style="height:50px; width:50px; border:1px solid #000;"> 8 </td>
+            <td style="height:50px; width:50px; border:1px solid #000;"> 9 </td>
           </tr>
         </tbody>
       </table>
