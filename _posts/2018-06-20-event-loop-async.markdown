@@ -7,7 +7,7 @@ categories: js
 
 ![Asynchronous JS Event Loop]({{ "assets/images/js-event-loop-async.png"| absolute_url }})
 
-<h4 style="color:#d14">Sequence of Events</h4>  
+<p style="color:#900; font-weight:bold; text-transform:uppercase;">Sequence of Events</p>  
 
 1. We define the `sayHi()` function.  
 
@@ -66,7 +66,7 @@ categories: js
 
 22. <strong>It's at this point that we'll see a 'Hello World' appear in the console.</strong>   
 &nbsp;  
-<h4 style="color:#d14">Order of Appearance in Console</h4>
+<p style="color:#900; font-weight:bold; text-transform:uppercase;">Order of Appearance in Console</p>
 
 1. Thanks for visiting  
 2. Tweets from the fetch function  

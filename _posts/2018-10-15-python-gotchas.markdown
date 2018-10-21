@@ -40,7 +40,6 @@ categories: docker
   .second-example table th, .second-example table td{
     padding: 0px 0px !important;
   }
-
   .mutable-immutable-types table th {
     background-color: #fff;
     border: 1px solid #666;
@@ -61,6 +60,7 @@ ___
 I encountered the first of these problems when I tried to play the game loop. My game was able to ask the user for input, set the size of the board, create a board, and accurately create a human and computer player. However when I tried to place the first move, my move was not marked in the one square I had picked, but in 3 squares.
 
 My game was marking the entire column.  
+
 In other words, instead of looking like the image on the left below, my board looked like the image on the right. 
 
 <div class="first-example">

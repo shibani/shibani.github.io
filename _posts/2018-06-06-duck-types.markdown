@@ -24,7 +24,7 @@ The premise is that once a duck type is implemented, several classes within an a
 
 A benefit having such similarly named methods or **messages** is that other classes in the application can then depend on these messages as they are more stable, while remaining oblivious to the specifics of the objects that implement them.  
 
-Resulting in the conclusion that **if an object quacks like a duck and walks like a duck then its class is immaterial, it <span style="color:#d14;">IS</span> a duck**
+Resulting in the conclusion that **if an object quacks like a duck and walks like a duck then its class is immaterial, it <span style="color:#900;">IS</span> a duck**
 
 For an example of a duck type in action, we might look at a vacationer planning a vacation.  In this example, they have no idea of the exact type of destination being passed, but instead trust that the duck typed destination will implement the `book_flight` method, consequently telling the vacationer which airline they should book their flight on in order to plan their vacation.
 
@@ -121,7 +121,7 @@ Returning different kinds of output would make our duck types less easy to depen
 
 Thus in Ruby, we can enable multiple classes to respond to the same messages. We can do this by leveraging Ruby’s features of polymorphism and dynamic typing<sup>2</sup>. Both of these are touched upon below.  An object can therefore act like many interfaces, resulting in across-class types that are defined by behavior.<br/><br/>
 
-<span style="color:#d14; font-size:16px; font-weight:bold;">1. POLYMORPHISM</span>
+<span style="color:#900; font-size:16px; font-weight:bold;">1. POLYMORPHISM</span>
 
 According to Sandi Metz, **Polymorphism in OOP is:**  
 
@@ -131,7 +131,7 @@ According to Sandi Metz, **Polymorphism in OOP is:**
 
 There are a few ways to implement polymorphism. Inheritance is one, duck typing is another.<br/><br/>
 
-<span style="color:#d14; font-size:16px; font-weight:bold;">2. DYNAMIC VS STATIC TYPING</span>
+<span style="color:#900; font-size:16px; font-weight:bold;">2. DYNAMIC VS STATIC TYPING</span>
 
   * Unlike dynamically-typed languages, most (though not all) statically-typed languages require that you declare the type of each variable and every method parameter.
   * Dynamic typing is in fact the very feature that paves the way for duck-typing.
