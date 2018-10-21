@@ -120,13 +120,13 @@ In other words, instead of looking like the image on the left below, my board lo
   <div class="clear"></div>
 </div>
 
-After some research and debugging I discovered that this behavior was thanks to Python’s **pass by reference** characteristic.  My board had been created using this function:  
+After some research and debugging I discovered that this behavior was thanks to Python’s **pass by reference** characteristic.  My board had been created using the following function:  
 
 ```
 [[None * row_size] * row_size]  
 ```  
 
-This would work perfectly in Ruby or Elixir.  However when building the board using this function in Python, we start off with `None`, which is `Python's null equivalent, and an object` (for more about None see the next section).  However while the above line of code creates 3 distinct `None` objects while resolving the code within the inner set of square brackets, thereby producing a single row, it then duplicates that result 3 times in order to resolve the code in the outer square brackets, leading to 3 rows, each row having the same references as the previous one. Which is why changing one `None` changed all 3 in the same column.  
+This would work perfectly in Ruby or Elixir.  However when building the board using this function in Python, we start off with `None`, which is `Python's null equivalent`. `None` is an object (for more about None see the next section).  The above line of code creates 3 distinct `None` objects while resolving the code within the inner set of square brackets, thereby producing a single row, and it then duplicates that result 3 times in order to resolve the code in the outer square brackets, leading to 3 rows, each row having the same references as the previous one. Which is why changing one `None` changed all 3 in the same column.  
 
 <p style="color:#000; font-weight:bold; text-transform:uppercase;">NONE IN PYTHON</p>
 
