@@ -140,7 +140,7 @@ ___
 &nbsp;  
 <p style="color:#900; font-weight:bold; text-transform:uppercase;">MUTABLE DEFAULT ARGUMENTS</p>  
 
-My second gotcha showed in my implementation of the `Minimax algorithm`.  Syntax that had served me well in the past 2 iterations in Ruby and Elixir was now having strange effects.  
+My second gotcha showed up in my implementation of the `Minimax algorithm`.  Syntax that had served me well in the past 2 iterations in Ruby and Elixir was now having strange effects.  
 
 <div class="second-example">
   <div class="bottom-left">
