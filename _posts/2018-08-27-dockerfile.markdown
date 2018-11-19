@@ -57,7 +57,7 @@ categories: docker
       <li><a href="#installing-phoenix"><span class="menu-item">Installing the Phoenix framework</span></a></li>  
       <li><a href="#apt-get-update"><span class="menu-item">Installing required Linux update utilities</span></a></li>  
       <li><a href="#downloading-node"><span class="menu-item">Downloading Node, required by React</span></a></li>  
-      <li><a href="#apt-cli"><span class="menu-item">Installing required Command Line Utilities</span></a></li>  
+      <li><a href="#apt-cli"><span class="menu-item">Installing required Linux Command Line Utilities</span></a></li>  
       <li><a href="#installing-node"><span class="menu-item">Installing Node</span></a></li>  
       <li><a href="#installing-build"><span class="menu-item">Installing Linux build tools</span></a></li>  
       <li><a href="#installing-watch"><span class="menu-item">Installing Linux watch and notify tools</span></a></li>  
@@ -65,7 +65,7 @@ categories: docker
       <li><a href="#setting-app-home"><span class="menu-item">Setting a variable to point to the app's working directory</span></a></li>  
       <li><a href="#creating-app-home"><span class="menu-item">Creating the app's working directory</span></a></li>  
       <li><a href="#cd-app-home"><span class="menu-item">Cding into the app's working directory once created</span></a></li>  
-      <li><a href="#expose-port"><span class="menu-item">Exposing a port to run your project at</span></a></li>  
+      <li><a href="#expose-port"><span class="menu-item">Exposing a port to run our project at</span></a></li>  
       <li><a href="#cmd-or-entrypoint"><span class="menu-item">CMD or Entrypoint</span></a></li>
     </ul></li>  
   <li><a href="#how-to-run"><span class="menu-item">How to run this Dockerfile</span></a></li>
@@ -162,7 +162,7 @@ This line downloads `Node.js`, required for `React`
 &nbsp;  
 <hr />
 &nbsp;    
-<span id="apt-cli">**Installing required Command Line Utilities**</span> 
+<span id="apt-cli">**Installing required Linux Command Line Utilities**</span> 
 ```
 apt-get install -y apt-utils  
 ```  
@@ -234,7 +234,7 @@ We now tell the script to set `/app` as the `working directory`.  It will cd int
 &nbsp;  
 <hr />
 &nbsp;  
-<span id="expose-port">**Exposing a port to run your project at**</span>
+<span id="expose-port">**Exposing a port to run our project at**</span>
 ```
 EXPOSE 4000
 ```  
@@ -252,9 +252,11 @@ Finally, we create the `CMD` instruction. Dockerfiles should specify at least on
 &nbsp;  
 <span id="how-to-run" style="color:#900; font-weight:bold; text-transform:uppercase;">HOW TO RUN THIS DOCKERFILE</span>  
 
-Every `instruction` in the Dockerfile we just covered creates a new layer. We can now run this file by typing `docker build -t <name_of_your_image> .` in terminal. Here the `-t flag` sets the `tag` or name of your project. Also note the trailing period in this instruction which indicates the folder where the `Dockerfile` is located. 
+Every `instruction` in the Dockerfile we just covered creates a new `layer`. Together, these layers comprise the image for the entire project. More information on using `layers` in `multi-stage builds` such as ours can be found here: <https://docs.docker.com/develop/develop-images/multistage-build/#before-multi-stage-builds>  
 
-You should now be able to run `docker images` in terminal and see your newly created image listed with the `tag` that you assigned it. At this point it is an inert image and is not running.  
+We can run the `Dockerfile` we have built by typing `docker build -t <name_of_your_image> .` in terminal. Here the `-t flag` sets the `tag` or name of your project. Also note the trailing period in this instruction which indicates the folder where the `Dockerfile` is located. 
+
+We should now be able to run `docker images` in terminal and see our newly created image listed with the `tag` that we assigned it. At this point it is an inert image and is not running.  
 &nbsp;  
 <hr />
 &nbsp;  
