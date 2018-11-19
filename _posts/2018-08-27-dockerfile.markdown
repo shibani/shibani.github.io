@@ -53,7 +53,7 @@ categories: docker
   <li><a href="#what-is-a-dockerfile"><span class="menu-item">What is a Dockerfile?</span></a></li>  
   <li><a href="#example"><span class="menu-item">An Example of a Dockerfile for an Elixir-Phoenix-React project</span></a>
     <ul>
-      <li><a href="#installing-elixir"><span class="menu-item">Installing Elixir</span></a></li>  
+      <li><a href="#installing-elixir"><span class="menu-item">The first line or Base Image - Installing Elixir</span></a></li>  
       <li><a href="#installing-phoenix"><span class="menu-item">Installing the Phoenix framework</span></a></li>  
       <li><a href="#apt-get-update"><span class="menu-item">Installing required Linux update utilities</span></a></li>  
       <li><a href="#downloading-node"><span class="menu-item">Downloading Node, required by React</span></a></li>  
@@ -66,7 +66,7 @@ categories: docker
       <li><a href="#creating-app-home"><span class="menu-item">Creating the app's working directory</span></a></li>  
       <li><a href="#cd-app-home"><span class="menu-item">Cding into the app's working directory once created</span></a></li>  
       <li><a href="#expose-port"><span class="menu-item">Exposing a port to run our project at</span></a></li>  
-      <li><a href="#cmd-or-entrypoint"><span class="menu-item">CMD or Entrypoint</span></a></li>
+      <li><a href="#cmd-or-entrypoint"><span class="menu-item">The final line - CMD or Entrypoint</span></a></li>
     </ul></li>  
   <li><a href="#how-to-run"><span class="menu-item">How to run this Dockerfile</span></a></li>
   <li><a href="#when-to-run"><span class="menu-item">When to run this Dockerfile</span></a></li> 
@@ -105,7 +105,7 @@ CMD ["mix", "phx.server"]
 <hr />
 &nbsp;  
 <span style="color:#900; font-weight:bold; text-transform:uppercase;">What went into this Dockerfile</span>  
-<span id="installing-elixir">**Installing Elixir**</span>  
+<span id="installing-elixir">**The first line or Base Image - Installing Elixir**</span>  
 ```
 FROM elixir:1.7.4  
 ```  
@@ -242,7 +242,7 @@ We then expose a port on the host machine, here we set it to 4000. We will now b
 &nbsp;  
 <hr />
 &nbsp;  
-<span id="cmd-or-entrypoint">**CMD or Entrypoint**</span>
+<span id="cmd-or-entrypoint">**The final line - CMD or Entrypoint**</span>
 ```
 CMD ["mix", "phx.server"]
 ```
