@@ -254,7 +254,7 @@ Finally, we create the `CMD` instruction. Dockerfiles should specify at least on
 
 Every `instruction` in the Dockerfile we just covered creates a new `layer`. Together, these layers comprise the image for the entire project. More information on using `layers` in `multi-stage builds` such as ours can be found here: <https://docs.docker.com/develop/develop-images/multistage-build/#before-multi-stage-builds>  
 
-We can run the `Dockerfile` we have built by typing `docker build -t <name_of_your_image> .` in terminal. Here the `-t flag` sets the `tag` or name of your project. Also note the trailing period in this instruction which indicates the folder where the `Dockerfile` is located. 
+We can run the `Dockerfile` we've built by typing `docker build -t <name_of_your_image> .` in terminal. Here the `-t flag` sets the `tag` or name of your project. Also note the trailing period in this instruction which indicates the folder where the `Dockerfile` is located. 
 
 We should now be able to run `docker images` in terminal and see our newly created image listed with the `tag` that we assigned it. At this point it is an inert image and is not running.  
 &nbsp;  
