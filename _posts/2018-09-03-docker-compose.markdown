@@ -10,11 +10,13 @@ categories: docker
     margin-left:20px;
     width:400px;
   }
+  
   .right-image {
     float:right;
     margin-left:20px;
     width:400px;
   }
+
   .subtitle{
     font-size:14px;
     font-weight: bold;
@@ -22,8 +24,47 @@ categories: docker
     margin-top:20px;
     margin-bottom:0px;
   }
-</style>
 
+  html {
+    scroll-behavior: smooth;
+  }
+
+  a{
+    text-decoration:none;
+  }
+
+  a:hover, a:active, a:visited, a:focus{
+    text-decoration:none;
+  }
+
+  ul.contents{
+    margin:15px 0px 20px 20px;
+    color:#2a7ae2;
+  }
+
+  .menu-item{
+    font-size:16px;
+    font-weight:bold;
+    color:#0099ff; 
+    color:#1a92bb;
+    color:#2a7ae2;
+  }
+
+  li a .menu-item:hover{
+    text-decoration:none !important;
+    color:#0099ff; 
+  }
+</style>
+<!-- <hr />  
+<p class="menu-item" style="margin-top:15px;">In this post:</p>
+<ul class="contents"> 
+  <li><a href="#what-is-it"><span class="menu-item">What is Duck Typing?</span></a></li>  
+  <li><a href="#example"><span class="menu-item">An example</span></a></li>  
+  <li><a href="#polymorphism"><span class="menu-item">Related Concepts - Polymorphism</span></a></li>  
+  <li><a href="#dynamic-vs-static-typing"><span class="menu-item">Related Concepts - Dynamic vs Static Typing</span></a></li> 
+</ul> 
+<hr />    -->
+&nbsp;  
 <p style="color:#900; font-weight:bold; text-transform:uppercase;">Docker Compose</p>  
 **What is Docker Compose?**  
 

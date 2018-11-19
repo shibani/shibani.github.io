@@ -8,11 +8,50 @@ categories: ruby
   .right-image {
     float:right;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  a{
+    text-decoration:none;
+  }
+
+  a:hover, a:active, a:visited, a:focus{
+    text-decoration:none;
+  }
+
+  ul.contents{
+    margin:15px 0px 20px 20px;
+    color:#2a7ae2;
+  }
+
+  .menu-item{
+    font-size:16px;
+    font-weight:bold;
+    color:#0099ff; 
+    color:#1a92bb;
+    color:#2a7ae2;
+  }
+
+  li a .menu-item:hover{
+    text-decoration:none !important;
+    color:#0099ff; 
+  }
 </style>
 
 ![duck]({{ "assets/images/blog-duck.png"| absolute_url }}){: .right-image }
-
-**What is Duck Typing?**
+<hr />  
+<p class="menu-item" style="margin-top:15px;">In this post:</p>
+<ul class="contents"> 
+  <li><a href="#what-is-it"><span class="menu-item">What is Duck Typing?</span></a></li>  
+  <li><a href="#example"><span class="menu-item">An example</span></a></li>  
+  <li><a href="#polymorphism"><span class="menu-item">Related Concepts - Polymorphism</span></a></li>  
+  <li><a href="#dynamic-vs-static-typing"><span class="menu-item">Related Concepts - Dynamic vs Static Typing</span></a></li> 
+</ul> 
+<hr />   
+&nbsp;  
+<span id="what-is-it" style="color:#900; font-size:16px; font-weight:bold;">WHAT IS DUCK TYPING?</span>
 
 **Duck Typing is a technique that reduces costs.**
 
@@ -30,7 +69,7 @@ For an example of a duck type in action, we might look at a vacationer planning 
 
 What we want is to have our application respond to something along the lines of:  
 
-<span style="color:#1a92bb;">**Vacationer.plan_vacation(destination)**</span><br /><br />
+<span id="example" style="color:#1a92bb;">**Vacationer.plan_vacation(destination)**</span><br /><br />
 
 
 ```ruby
@@ -121,7 +160,7 @@ Returning different kinds of output would make our duck types less easy to depen
 
 Thus in Ruby, we can enable multiple classes to respond to the same messages. We can do this by leveraging Ruby’s features of polymorphism and dynamic typing<sup>2</sup>. Both of these are touched upon below.  An object can therefore act like many interfaces, resulting in across-class types that are defined by behavior.<br/><br/>
 
-<span style="color:#900; font-size:16px; font-weight:bold;">1. POLYMORPHISM</span>
+<span id="polymorphism" style="color:#900; font-size:16px; font-weight:bold;">1. POLYMORPHISM</span>
 
 According to Sandi Metz, **Polymorphism in OOP is:**  
 
@@ -131,7 +170,7 @@ According to Sandi Metz, **Polymorphism in OOP is:**
 
 There are a few ways to implement polymorphism. Inheritance is one, duck typing is another.<br/><br/>
 
-<span style="color:#900; font-size:16px; font-weight:bold;">2. DYNAMIC VS STATIC TYPING</span>
+<span id="dynamic-vs-static-typing" style="color:#900; font-size:16px; font-weight:bold;">2. DYNAMIC VS STATIC TYPING</span>
 
   * Unlike dynamically-typed languages, most (though not all) statically-typed languages require that you declare the type of each variable and every method parameter.
   * Dynamic typing is in fact the very feature that paves the way for duck-typing.

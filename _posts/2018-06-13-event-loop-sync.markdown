@@ -5,9 +5,50 @@ date:   2018-06-13 13:23:55 -0500
 categories: js
 ---
 
+<style type="text/css">
+  html {
+    scroll-behavior: smooth;
+  }
+
+  a{
+    text-decoration:none;
+  }
+
+  a:hover, a:active, a:visited, a:focus{
+    text-decoration:none;
+  }
+
+  ul.contents{
+    margin:15px 0px 20px 20px;
+    color:#2a7ae2;
+  }
+
+  .menu-item{
+    font-size:16px;
+    font-weight:bold;
+    color:#0099ff; 
+    color:#1a92bb;
+    color:#2a7ae2;
+  }
+
+  li a .menu-item:hover{
+    text-decoration:none !important;
+    color:#0099ff; 
+  }
+</style>
+<hr />  
+<p class="menu-item" style="margin-top:15px;">In this post:</p>
+<ul class="contents"> 
+  <li><a href="#diagram"><span class="menu-item">Synchronous Event Loop Diagram</span></a></li>  
+  <li><a href="#sequence-of-events"><span class="menu-item">Sequence of Events</span></a></li>  
+  <li><a href="#order-of-appearance"><span class="menu-item">Order of Events Appearing in Console</span></a></li>  
+</ul> 
+<hr />   
+&nbsp;  
+<span id="diagram"></span>
 ![Synchronous JS Event Loop]({{ "assets/images/js-event-loop-sync.png"| absolute_url }})
 
-<p style="color:#900; font-weight:bold; text-transform:uppercase;">Sequence of Events</p>  
+<p id="sequence-of-events" style="color:#900; font-weight:bold; text-transform:uppercase;">Sequence of Events</p>  
 
 1. We define the `sayHi()` function.  
 
@@ -39,7 +80,7 @@ categories: js
 &nbsp;  
 &nbsp;  
 
-<p style="color:#900; font-weight:bold; text-transform:uppercase;">Order of Appearance in Console</p>  
+<p id="order-of-appearance" style="color:#900; font-weight:bold; text-transform:uppercase;">Order of Events Appearing in Console</p>  
 
 1. Thanks for visiting  
 2. Hello World

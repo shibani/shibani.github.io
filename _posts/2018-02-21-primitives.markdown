@@ -4,6 +4,38 @@ title:  "Primitives in Java"
 date:   2018-02-21 15:23:55 -0500
 categories: java
 ---
+<style type="text/css">
+  html {
+    scroll-behavior: smooth;
+  }
+
+  a{
+    text-decoration:none;
+  }
+
+  a:hover, a:active, a:visited, a:focus{
+    text-decoration:none;
+  }
+
+  ul.contents{
+    margin:15px 0px 20px 20px;
+    color:#2a7ae2;
+  }
+
+  .menu-item{
+    font-size:16px;
+    font-weight:bold;
+    color:#0099ff; 
+    color:#1a92bb;
+    color:#2a7ae2;
+  }
+
+  li a .menu-item:hover{
+    text-decoration:none !important;
+    color:#0099ff; 
+  }
+</style>
+
 My first week at 8th Light has included working on Java Koans and today I’ve been digging away into Primitive types. It’s always useful to know the Primitive types of any language, and Java is no exception.  
 
 In Java, I was surprised to revisit these and note that there are 8 primitive data types, 2 of which are boolean and char, the rest being numeric. The finer points of these primitive types are notable as well.

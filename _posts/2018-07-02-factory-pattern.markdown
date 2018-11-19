@@ -4,10 +4,51 @@ title:  "The Factory Pattern"
 date:   2018-07-02 15:23:55 -0500
 categories: patterns
 ---
+<style type="text/css">
+  html {
+    scroll-behavior: smooth;
+  }
 
+  a{
+    text-decoration:none;
+  }
+
+  a:hover, a:active, a:visited, a:focus{
+    text-decoration:none;
+  }
+
+  ul.contents{
+    margin:15px 0px 20px 20px;
+    color:#2a7ae2;
+  }
+
+  .menu-item{
+    font-size:16px;
+    font-weight:bold;
+    color:#0099ff; 
+    color:#1a92bb;
+    color:#2a7ae2;
+  }
+
+  li a .menu-item:hover{
+    text-decoration:none !important;
+    color:#0099ff; 
+  }
+</style>
 ![donuts]({{ "assets/images/donuts.jpg"| absolute_url }})
+<p class="menu-item" style="margin-top:15px;">In this post:</p>
+<ul class="contents"> 
+  <li><a href="#what-is-it"><span class="menu-item">What is it?</span></a></li>  
+  <li><a href="#simple-factory"><span class="menu-item">The Simple Factory</span></a></li>  
+  <li><a href="#factory-method"><span class="menu-item">The Factory Method</span></a></li>  
+  <li><a href="#abstract-factory"><span class="menu-item">The Abstract Factory</span></a></li> 
+  <li><a href="#template-pattern"><span class="menu-item">Similarities to the Template Pattern</span></a></li>
+  <li><a href="#inputs-outputs"><span class="menu-item">Types of inputs and outputs</span></a></li>
+  <li><a href="#when-to-use"><span class="menu-item">When to use it</span></a></li>
+</ul>  
+<hr />   
 &nbsp;  
-<strong><span style="color:#900">WHAT IS IT?</span></strong>
+<strong><span id="what-is-it" style="color:#900">WHAT IS IT?</span></strong>
 * In its simplest form, the <strong>Factory Method</strong> is a design pattern that encapsulates instantiation.
 * It defines an interface for instantiating objects.  
 * The interface does not need to know the type of object it is required to instantiate.  
@@ -15,7 +56,7 @@ categories: patterns
 &nbsp;  
 &nbsp;     
 
-<strong><span style="color:#900;">THE FACTORY PATTERNS</span></strong>  
+<strong><span id="simple-factory" style="color:#900;">THE FACTORY PATTERNS</span></strong>  
 
 <strong>1. The Simple Factory</strong>  
 The Simple Factory suggests replacing direct object creation (using a new operator) with a call to a special `factory` method. The constructor call should be moved inside that method. Objects returned by factory methods are often referred to as `products`.  The `Simple Factory` is the most basic implementation of the Factory Pattern.  
@@ -105,7 +146,7 @@ donut_factory.make_donut(:chocolate)
 &nbsp;  
 &nbsp;     
 
-<strong>2. The Factory Method</strong>  
+<span id="factory-method"><strong>2. The Factory Method</strong></span>  
 The Factory Method defines an interface for creating Factories that will each return an object by deferring to the Factory's subclasses on which type of object to instantiate. A superclass specifies all standard and generic behavior (using pure virtual "placeholders" for creation steps), and then delegates the creation details to subclasses that are supplied by the client.  
 
 ```ruby
@@ -171,7 +212,7 @@ donut_factory.create_donut(:mini, :chocolate)
 &nbsp;  
 &nbsp;     
 
-<strong>3. The Abstract Factory</strong>  
+<span id="abstract-factory"><strong>3. The Abstract Factory</strong></span>  
 The Abstract Factory defines an interface for creating Factories that will  each return multiple related objects without explicitly specifying their classes.  
 
 ```ruby
@@ -253,7 +294,7 @@ application_ui_factory.create_ui_elements(:mac)
 &nbsp;  
 &nbsp;     
 
-<strong><span style="color:#900;">SIMILARITIES TO THE TEMPLATE PATTERN</span></strong>  
+<strong><span id="template-pattern" style="color:#900;">SIMILARITIES TO THE TEMPLATE PATTERN</span></strong>  
 &nbsp;    
 The Template pattern and the Factory pattern are similar in that both leave the task of implementation to subclasses.
 * In the Factory method, a superclass defines an interface to create an object. Subclasses decide which concrete class to instantiate.
@@ -262,12 +303,12 @@ The Template pattern and the Factory pattern are similar in that both leave the 
 &nbsp;  
 &nbsp;  
 
-<strong><span style="color:#900;">TYPES OF INPUTS AND OUTPUTS</span></strong>  
+<strong><span id="inputs-outputs" style="color:#900;">TYPES OF INPUTS AND OUTPUTS</span></strong>  
 * The Factory Pattern can take different types of inputs that might specify what type of object should be created.
 * However, it produces outputs of the same type, or different subtypes of the same type, e.g. different types of donuts.
 * Whether the outputs are of the same type or different subtypes, they will respond to the same messages, e.g. `.filling` and `.price`.
 
 &nbsp;  
-<strong><span style="color:#900;">WHEN TO USE IT</span></strong>   
+<strong><span id="when-to-use" style="color:#900;">WHEN TO USE IT</span></strong>   
 &nbsp;   
 The Factory Method should be used when an application cannot predict the type of object required. In other words, it knows <strong>when</strong> a new object should be created but not <strong>what</strong> type.

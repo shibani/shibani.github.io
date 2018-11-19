@@ -45,17 +45,52 @@ categories: docker
     border: 1px solid #666;
     border-bottom-color: #666;
   }
-</style>
+  html {
+    scroll-behavior: smooth;
+  }
 
-<p style="color:#900; font-weight:bold; text-transform:uppercase;">Some Gotchas I uncovered while building Tictactoe in Python</p>  
+  a{
+    text-decoration:none;
+  }
+
+  a:hover, a:active, a:visited, a:focus{
+    text-decoration:none;
+  }
+
+  ul.contents{
+    margin:15px 0px 20px 20px;
+    color:#2a7ae2;
+  }
+
+  .menu-item{
+    font-size:16px;
+    font-weight:bold;
+    color:#0099ff; 
+    color:#1a92bb;
+    color:#2a7ae2;
+  }
+
+  li a .menu-item:hover{
+    text-decoration:none !important;
+    color:#0099ff; 
+  }
+</style>
+<hr />  
+<p class="menu-item" style="margin-top:15px;">In this post:</p>
+<ul class="contents"> 
+  <li><a href="#pass-by-reference"><span class="menu-item">Passing by Reference</span></a></li>  
+  <li><a href="#none"><span class="menu-item">None in Python</span></a></li>  
+  <li><a href="#mutable-default-args"><span class="menu-item">Mutable Default Arguments</span></a></li>  
+  <li><a href="#mutable-immutable-types"><span class="menu-item">Mutable and Immutable Types in Python</span></a></li>  
+</ul> 
+<hr />  
+&nbsp;   
+<span style="color:#900; font-weight:bold; text-transform:uppercase;">Some Gotchas I uncovered while building Tictactoe in Python</span>  
 
 My most recent project was writing Tictactoe in Python, a task I thought I had a reasonably clear idea of, after having written Tictactoe in both Ruby and Elixir.  I was thus very surprised to uncover hurdles that seemed to have absolutely no clear solution.  
+<hr />  
 &nbsp;  
-&nbsp;  
-___   
-
-&nbsp;   
-<p style="color:#900; font-weight:bold; text-transform:uppercase;">PASSING BY REFERENCE</p>  
+<span id="pass-by-reference" style="color:#900; font-weight:bold; text-transform:uppercase;">PASSING BY REFERENCE</span>  
 
 I encountered the first of these problems when I tried to play the game loop. My game was able to ask the user for input, set the size of the board, create a board, and accurately create a human and computer player. However when I tried to place the first move, my move was not marked in the one square I had picked, but in 3 squares.
 
@@ -127,18 +162,15 @@ After some research and debugging I discovered that this behavior was thanks to 
 ```  
 
 This would work perfectly in Ruby or Elixir.  However when building the board using this function in Python, we start off with `None`, which is `Python's null equivalent`. `None` is an object (for more about None see the section directly below).  The above line of code creates 3 distinct `None` objects while resolving the code within the inner set of square brackets, thereby producing a single row, and it then duplicates that result 3 times in order to resolve the code in the outer square brackets, leading to 3 rows, each row having the same references as the previous one. Which is why changing one `None` changed all 3 in the same column.  
+&nbsp;  
+<span id="none" style="color:#000; font-weight:bold; text-transform:uppercase;">NONE IN PYTHON</span>
 
-<p style="color:#000; font-weight:bold; text-transform:uppercase;">NONE IN PYTHON</p>
-
-- `None` is an object - a class. Not a basic type, such as digits, or True and False.
-- In Python 3.x, the type object was changed to new style classes. However the behaviour of `None` is the same.
+- `None` is an object - a class. Not a primitive type, such as int, or True and False.
+- In Python 3.x, the type object was changed from `<type 'NoneType'>` to `<class 'NoneType'>`. However the behaviour of `None` has remained the same.
 - Because `None` is an object, we cannot use it to check if a variable exists. It is a value/object, not an operator used to check a condition.  
-  
+<hr />  
 &nbsp;  
-___   
-
-&nbsp;  
-<p style="color:#900; font-weight:bold; text-transform:uppercase;">MUTABLE DEFAULT ARGUMENTS</p>  
+<span id="mutable-default-args" style="color:#900; font-weight:bold; text-transform:uppercase;">MUTABLE DEFAULT ARGUMENTS</span>  
 
 My second gotcha showed up in my implementation of the `Minimax algorithm`.  Syntax that had served me well in the past 2 iterations in Ruby and Elixir was now having strange effects.  
 
@@ -234,7 +266,7 @@ A third test checked whether when given a choice of multiple open spots, `Minima
 
 Strangely enough, 5 kept showing up as the selected move in all 3 of these tests, even though 5 was only a valid option in my very first test, and not a valid option in the other 2 mentioned.  It looked like the open spot from my first test was somehow persisting into my next 2 tests.  
 
-Here my mentor alerted me to `Mutable Default Arguments`<sup>1</sup> 
+Here my mentor alerted me to read up on `Python Gotchas` of which `Mutable Default Arguments`<sup>1</sup> was one.
 
 According to the article,   
 
@@ -250,8 +282,9 @@ def minimax(self, game, depth=0, scores_map={}):
 
 The same goes for any default arguments in a function call that are set to mutable data types in Python. A quick search for mutable types in Python tells us:  
 
-Objects of built-in types like int, float, bool, str, tuple, and unicode are immutable. Objects of built-in types like list, set, and dict are mutable. Custom classes are generally mutable.  A table to illustrate might be simpler, see below.<sup>2</sup>
+<em>Objects of built-in types like int, float, bool, str, tuple, and unicode are immutable. Objects of built-in types like list, set, and dict are mutable. Custom classes are generally mutable.</em>  
 
+A table to illustrate might be simpler, see below.<sup>2</sup>  
 
 My scores map was being mutated with a 5 the first time it was called and then it held on to the 5 for all future calls to that function as well.  
 
@@ -262,9 +295,12 @@ def minimax(self, game, depth=0, scores_map=None):
   if not scores_map:  
     scores_map = {}   
 ```  
-
-<div class="mutable-immutable-types">
-  <table style="font-size:16px;text-align:left;color:#666;" cellpadding="10px" cellspacing="0" border="1px solid #666">
+&nbsp;  
+<hr />
+<div id="mutable-immutable-types" class="mutable-immutable-types">
+  &nbsp;
+  <span style="color:#900; font-weight:bold; text-transform:uppercase;">MUTABLE & IMMUTABLE TYPES IN PYTHON</span> 
+  <table style="font-size:16px;text-align:left;color:#666;margin-top:20px;" cellpadding="10px" cellspacing="0" border="1px solid #666">
       <colgroup>
         <col width="150px" />
         <col width="600px" />

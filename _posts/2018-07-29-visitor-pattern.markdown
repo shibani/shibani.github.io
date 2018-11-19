@@ -9,12 +9,51 @@ categories: patterns
     float:right;
     margin-left:20px;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  a{
+    text-decoration:none;
+  }
+
+  a:hover, a:active, a:visited, a:focus{
+    text-decoration:none;
+  }
+
+  ul.contents{
+    margin:15px 0px 20px 20px;
+    color:#2a7ae2;
+  }
+
+  .menu-item{
+    font-size:16px;
+    font-weight:bold;
+    color:#0099ff; 
+    color:#1a92bb;
+    color:#2a7ae2;
+  }
+
+  li a .menu-item:hover{
+    text-decoration:none !important;
+    color:#0099ff; 
+  }
 </style>
 
 ![game of thrones]({{ "assets/images/game-of-thrones.png"| absolute_url }})
+<p class="menu-item" style="margin-top:15px;">In this post:</p>
+<ul class="contents"> 
+  <li><a href="#what-is-it"><span class="menu-item">What is it?</span></a></li>  
+  <li><a href="#visitor-interface"><span class="menu-item">Implementation - The Visitor Interface</span></a></li>  
+  <li><a href="#visitable-interface"><span class="menu-item">Implementation - The Visitable Interface</span></a></li>  
+  <li><a href="#example"><span class="menu-item">An example</span></a></li>  
+  <li><a href="#repl"><span class="menu-item">Test drive it in this REPL!</span></a></li> 
+  <li><a href="#when-to-use"><span class="menu-item">When to use it</span></a></li>
+</ul>  
+<hr />   
 &nbsp;  
-
-**<span style="color:#900">WHAT IS IT?</span>**  
+**<span id="what-is-it" style="color:#900">WHAT IS IT?</span>**  
 
 Your team just got a new project assigned to you and you're all really excited because it's building out an interactive feature for the **Game of Thrones** website!  
 
@@ -35,12 +74,12 @@ Enter the ~~dragon~~ **visitor pattern**.
 
 **<span style="color:#900">HOW THE INTERFACES WORK</span>**  
 
-**1. The Visitor interface**  
+<span id="visitor-interface">**1. The Visitor interface**</span>  
 We implement a `Visitor` interface (or module) and add one method to it.  This is the `visit` method.  All visitors that we subsequently create will have to implement this `visit` method.  
 
 We then create classes to implement the behavior that we would like the original class in the legacy code to include.  We include the `Visitor` module in the new classes we've created, so they now `have` `visitor` behavior.   
 
-**2. The Visitable interface**  
+<span id="visitable-interface">**2. The Visitable interface**</span>  
 We do need to do just a little work in the original class for our pattern to come together.  
 
 We go into the original class in the legacy code and add the `Visitable` interface (or module) to it.  This `Visitable` module also defines just one method, the `accept` method.  
@@ -49,6 +88,7 @@ We go into the original class in the legacy code and add the `Visitable` interfa
 
 To summarize, the newly added and minimally modified code allows us to gain access to objects instantiated by the original class and add behavior to them without modifying the original class any further.  
 
+<span id="example"></span>
 &nbsp;  
 ```ruby
 # CLASS THAT WE WOULD LIKE TO EXTEND WITHOUT CHANGING  
@@ -145,12 +185,12 @@ lannister.accept(cersei)
 ```  
 &nbsp;  
 &nbsp;
-**<span style="color:#900">PLAY AROUND WITH IT IN THIS REPL!</span>**
+**<span id="repl" style="color:#900">PLAY AROUND WITH IT IN THIS REPL!</span>**
 &nbsp;
 &nbsp;
 <iframe height="1200px" width="100%" src="https://repl.it/@shibani77/SomberDazzlingDownloads?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 &nbsp;  
 &nbsp;  
-**<span style="color:#900">WHEN TO USE IT</span>**  
+**<span id="when-to-use" style="color:#900">WHEN TO USE IT</span>**  
 
 When there is limited access to the original class, and the ability to make direct modifications to it is curtailed.  
