@@ -157,8 +157,7 @@ This command downloads package lists from Linux repositories and updates them to
 ```
 curl -sL https://deb.nodesource.com/setup_8.x | bash  
 ```  
-This line downloads `Node.js`, required for `React`
-</span>  
+This line downloads `Node.js`, required for `React`   
 &nbsp;  
 <hr />
 &nbsp;    
