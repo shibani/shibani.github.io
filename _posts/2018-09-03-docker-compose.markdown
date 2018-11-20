@@ -55,23 +55,34 @@ categories: docker
     color:#0099ff; 
   }
 </style>
-<!-- <hr />  
+<hr />  
 <p class="menu-item" style="margin-top:15px;">In this post:</p>
 <ul class="contents"> 
-  <li><a href="#what-is-it"><span class="menu-item">What is Duck Typing?</span></a></li>  
+  <li><a href="#what-is-it"><span class="menu-item">What is Docker Compose?</span></a></li>  
   <li><a href="#example"><span class="menu-item">An example</span></a></li>  
-  <li><a href="#polymorphism"><span class="menu-item">Related Concepts - Polymorphism</span></a></li>  
-  <li><a href="#dynamic-vs-static-typing"><span class="menu-item">Related Concepts - Dynamic vs Static Typing</span></a></li> 
+  <li><a href="#version"><span class="menu-item">Setting the Version</span></a></li>  
+  <li><a href="#app-service"><span class="menu-item">Including Services</span></a>
+    <ul>
+      <li><a href="#app-service"><span class="menu-item">App service</span></a></li>  
+      <li><a href="#db-service"><span class="menu-item">DB Service</span></a></li>  
+    </ul>
+  </li>
+  <li><a href="#port"><span class="menu-item">Mapping a Port</span></a></li>  
+  <li><a href="#pg-host"><span class="menu-item">Setting the Postgres Database</span></a></li>  
+  <li><a href="#volumes"><span class="menu-item">Specifying Volumes</span></a></li>  
+  <li><a href="#depends-on"><span class="menu-item">Specifying Dependencies</span></a></li>  
+  
+  <li><a href="#running-the-project"><span class="menu-item">Running the Project</span></a></li>  
 </ul> 
-<hr />    -->
+<hr />   
 &nbsp;  
 <p style="color:#900; font-weight:bold; text-transform:uppercase;">Docker Compose</p>  
-**What is Docker Compose?**  
+<span id="what-is-it">**What is Docker Compose?**</span>  
 
 As mentioned in the previous Docker posts, the final piece of getting a project up and running in Docker is the `Docker Compose` file.  
 
 The `Docker Compose` file is a yml file that specifies all the services required by a project.  This can include the `app` or `web app` service, and the `database` service, as shown in the example below. 
-
+<span id="example"></span> 
 ```bash
 ---
 version: '3'
@@ -108,7 +119,7 @@ services:
 volumes:
   pgdata:
 ```    
-<p class="subtitle">VERSION</p>   
+<span id="version">**Setting the Version**</span>   
 The first line of the Docker file declares the version of the file format. Compose files that do not declare a version default to `version 1`, which is a legacy version.  The most current format version is 3.x.  
 &nbsp;  
     
@@ -116,30 +127,31 @@ The first line of the Docker file declares the version of the file format. Compo
 &nbsp;  
 &nbsp;  
     
-<p class="subtitle">APP SERVICE</p>   
+<span id="app-service">**App service**</span>   
 The `app` service specifies that it is created using `phoenix 1.3.4` as its base image. When `docker-compose up` or `docker-compose build` is called on this file, this script will build the current directory, specified by `build: .`
 Here `docker-compose build` will simply build the project, while `docker-compose up` will build the project AND start the containers.
 Once the project has been built, it is recommended to start and stop containers gracefully by running docker start <container_name> or docker stop <container_name> as mentioned earlier.  
 
-<p class="subtitle">PORT</p>  
+<span id="port">**Mapping a Port**</span>  
 Our `app` configuration also specifies a `PORT` - in this case, the Docker container is being exposed at `port 4000` and then being mapped to the local machine's `port 4000`. We can choose to map the container's `port 4000` to the local machine's `port 3000` by specifying this instead: `"3000:4000"`, where the format follows `HOST:CONTAINER`, in which case we will now be able to access our project by navigating to `localhost:3000` (we initially set our container port in the `Dockerfile` in the line that read `EXPOSE 4000`.  
 
-<p class="subtitle">PGHOST</p>  
+<span id="pg-host">**Setting the Postgres Database**</span>  
 When using databases in a containerized setup, we are no longer mapping to our database at `localhost`. Our database will now be running within our container, and thefore our `PGHOST` is set to `db`.
 
-<p class="subtitle">VOLUMES</p>  
+<span id="volumes">**Specifying Volumes**</span>  
 `Volumes` are the preferred mechanism for **persisting data** to docker containers. The `volumes` configuration above is set to `./src:/app`. This implies that whatever is included within the tree under the `./src` folder in our local project will be continuously copied, mapped to and synced with the `/app` directory in our container.  Volumes are managed by Docker and are isolated from the core functionality of the host machine. In this way, our container can reflect all changes that are made to our local project files.  
 
-<p class="subtitle">DEPENDS ON</p>  
+<span id="depends-on">**Specifying Dependencies**</span>  
 Including this setting will ensure that the service specified -- in our case `db` -- will start up before our app does.
 
-<p class="subtitle">DB SERVICE</p>  
+<span id="db-service">**DB service**</span>  
 Similary, our `db` configuration also specifies `image` (in this case `Postgres 10`), `environment` and `volumes` settings.
 
 It should finally be noted that the `Docker Compose` file can be further customized in order to suit your particular project's configuration, and that the file above is by no means the only variation. It should simply serve as an example to illustrate some of the settings that are commonly used, while others are more specific to the project I was working on.  
 &nbsp;  
     
-**We are now ready to get our project up and running.**
+<span id="running-the-project">**Running the Project**</span>  
+We are now ready to get our project up and running.  
 &nbsp;  
 &nbsp;  
     
@@ -152,7 +164,7 @@ It should finally be noted that the `Docker Compose` file can be further customi
 &nbsp;  
     
 <span style="font-size:12px;">
-For more information on <strong>Docker Compose</strong> and all available configuration options, please visit: <https://docs.docker.com/compose/compose-file/>
+  For more information on <strong>Docker Compose</strong> and all available configuration options, please visit: <https://docs.docker.com/compose/compose-file/>
 </span>  
 
 <!-- **To build your project**  
