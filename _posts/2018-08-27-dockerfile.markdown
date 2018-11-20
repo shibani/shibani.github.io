@@ -187,7 +187,9 @@ This line installs `Node.js` in `Ubuntu`, which is the particular flavor of `Deb
 apt-get install -y build-essential  
 ```  
 This package is required for building `Debian` packages.  
-More information can be found at: <https://packages.debian.org/jessie/build-essential>  
+<span style="font-size:12px;">
+  More information can be found at: <https://packages.debian.org/jessie/build-essential>  
+</span>
 &nbsp;  
 <hr />
 &nbsp;  
