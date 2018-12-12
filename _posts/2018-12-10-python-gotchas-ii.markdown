@@ -353,7 +353,7 @@ def minimax(self, game, depth=0, scores_map=None):
 ```  
 &nbsp;  
 &nbsp; 
-<span id="repl-4" style="color:#000; font-weight:bold;">Once again, run the code in the REPL to view this quirky behavior</span>    
+<span id="repl-4" style="color:#000; font-weight:bold;">Run the code in the REPL to view this quirk</span>    
 <iframe height="800px" width="100%" src="https://repl.it/@shibani77/FlamboyantQuirkyDebugging?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 &nbsp; 
 &nbsp;  
