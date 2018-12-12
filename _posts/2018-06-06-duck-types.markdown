@@ -2,7 +2,7 @@
 layout: post
 title:  "Duck Typing"
 date:   2018-06-06 15:23:55 -0500
-categories: ruby
+categories: patterns
 ---
 <style type="text/css">
   .right-image {

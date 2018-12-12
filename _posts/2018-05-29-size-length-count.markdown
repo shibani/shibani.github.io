@@ -51,12 +51,18 @@ categories: ruby
 Each and map are both iterators that iterate over elements in a collection by returning every element sequentially in order for operations to be performed on them.   
 
 <span id="each">**EACH**</span>
-The `each` iterator is always associated with a block.  Each does not change the return value. It implicitly returns the original array.
+The `each` iterator is always associated with a block.  `each` does not change the return value. It implicitly returns the original array.
 
 <span id="map">**MAP**</span>
-On the other hand, `map` is what we want if we want to return a collection that is different from the original we supplied. It is important to note that the original collection is not modified, but that the `return value` is.
+On the other hand, `map` is what we want if we are looking to return a collection that is different from the original we supplied. It is important to note that the original collection is not modified, but that the `return value` is.
 
 **Neither each nor map modify the original collection.**
+
+&nbsp;  
+**<span id="repl" style="color:#900">PLAY AROUND WITH IT IN THIS REPL!</span>**
+&nbsp;
+&nbsp;
+<iframe height="800px" width="100%" src="https://repl.it/repls/FailingFirebrickScope?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 &nbsp;  
 &nbsp;  
 <hr />
