@@ -103,12 +103,12 @@ categories: python
 &nbsp;   
 <span style="color:#900; font-weight:bold; text-transform:uppercase;">Some Gotchas I uncovered while building Tictactoe in Python</span>  
 
-My most recent project was writing Tictactoe in Python, a task I thought I had a reasonably clear idea of, after having written Tictactoe in both Ruby and Elixir.  I was thus very surprised to uncover hurdles that seemed to have absolutely no clear solution. Luckily our mentors are excellent at just this sort of thing and mine directed me to read up on... **Python Gotchas**.
+As a new Python programmer, I ran into three common language gotchas: passing arguments by reference, unbound local variables, and mutable default arguments. Hopefully this post will help to shed some light on these gotchas and save the time I spent debugging them. However, what I gained by attempting to understand these gotchas was a wonderful opportunity to take a deep dive into a new language and explore some of its under the hood behavior.
 <hr />  
 &nbsp;  
 <span id="pass-by-reference" style="color:#900; font-weight:bold; text-transform:uppercase;">PASSING BY REFERENCE</span>  
 
-However, since `pass by reference` is not really a gotcha, I guess you could put this first one in the glitch category. I encountered this issue when I first tried to play the game loop. My game was able to ask the user for input, set the size of the board, create a board, and accurately create a human and computer player. However when I tried to place the first move, my move was not marked in the one square I had picked, but in 3 squares.
+I encountered the `pass-by-reference` gotcha when I first tried to play the game loop. My game was able to ask the user for input, set the size of the board, create a board, and accurately create a human and computer player. However when I tried to place the first move, my move was not marked in the one square I had picked, but in 3 squares.
 
 My game was marking the entire column.  
 
@@ -187,7 +187,7 @@ This would work perfectly in Ruby or Elixir.  However when building the board us
 &nbsp;  
 &nbsp;  
 <span id="repl-1" style="color:#000; font-weight:bold;">Toggle lines 1 or 2 in this REPL and run the code to view the Pass by Reference glitch in action</span>   
-<iframe height="800px" width="100%" src="https://repl.it/@shibani77/KnottyGentleVisitor?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="800px" width="100%" src="https://repl.it/@shibani77/FocusedSpanishUnits?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 &nbsp;  
 &nbsp;  
 <hr />  
@@ -208,7 +208,7 @@ Back in our repl, we can now `comment line 7` and `uncomment line 8`. On `line 8
 <br />
 <br />
 <span id="repl-2" style="color:#000; font-weight:bold;">Toggle lines 2, 7 & 8 to see how Python's LEGB scoping works</span>
-<iframe height="800px" width="100%" src="https://repl.it/@shibani77/LimeVainHypertalk?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="800px" width="100%" src="https://repl.it/@shibani77/ObedientRunnyPixel?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 &nbsp;  
 &nbsp;  
 <hr />  
@@ -221,7 +221,7 @@ The above error occurs because, when we make an `assignment` to a variable in sc
 &nbsp;  
 &nbsp;  
 <span id="repl-3" style="color:#000; font-weight:bold;">Toggle lines 15 - 17 in this REPL to generate Unbound Local Errors</span>  
-<iframe height="800px" width="100%" src="https://repl.it/@shibani77/PaltryLiquidLinks?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe> 
+<iframe height="800px" width="100%" src="https://repl.it/@shibani77/TemporalTrueVaporware?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe> 
 &nbsp;  
 &nbsp;  
 <hr /> 
@@ -354,7 +354,7 @@ def minimax(self, game, depth=0, scores_map=None):
 &nbsp;  
 &nbsp; 
 <span id="repl-4" style="color:#000; font-weight:bold;">Run the code in the REPL to view this quirk</span>    
-<iframe height="800px" width="100%" src="https://repl.it/@shibani77/FlamboyantQuirkyDebugging?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="800px" width="100%" src="https://repl.it/@shibani77/ImaginativeDisguisedDowngrade?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 &nbsp; 
 &nbsp;  
 
