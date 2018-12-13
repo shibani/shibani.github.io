@@ -103,7 +103,7 @@ categories: python
 &nbsp;   
 <span style="color:#900; font-weight:bold; text-transform:uppercase;">Some Gotchas I uncovered while building Tictactoe in Python</span>  
 
-As a new Python programmer, I ran into three common language gotchas: passing arguments by reference, unbound local variables, and mutable default arguments. Hopefully this post will help to shed some light on these gotchas and save the time I spent debugging them. However, what I gained by attempting to understand these gotchas was a wonderful opportunity to take a deep dive into a new language and explore some of its under the hood behavior.
+As a new Python programmer, I ran into three common language gotchas: passing variables by reference, unbound local errors, and mutable default arguments. Hopefully this post will help to shed some light on these gotchas and save the time I spent debugging them. However, what I gained by attempting to understand these gotchas was a wonderful opportunity to take a deep dive into a new language and explore some of its under the hood behavior.
 <hr />  
 &nbsp;  
 <span id="pass-by-reference" style="color:#900; font-weight:bold; text-transform:uppercase;">PASSING BY REFERENCE</span>  
