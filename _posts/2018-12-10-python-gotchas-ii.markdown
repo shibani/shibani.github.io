@@ -186,7 +186,7 @@ This would work perfectly in Ruby or Elixir.  However when building the board us
 - Because `None` is an object, we cannot use it to check if a variable exists. It is a value/object, not an operator used to check a condition.  
 &nbsp;  
 &nbsp;  
-<span id="repl-1" style="color:#000; font-weight:bold;">In this REPL - Click on the file icon in the left column and in the board.py file, toggle lines 2 and 3, and then run the code to view the Pass by Reference gotcha turn off and on</span>   
+<span id="repl-1" style="color:#000; font-weight:bold;">In this REPL - Click on the Play button to run tests, or click on the file icon in the left column and in the board.py file, toggle lines 2 and 3, and then run the code to view the Pass by Reference gotcha turn off and on</span>   
 <iframe height="800px" width="100%" src="https://repl.it/@shibani77/FocusedSpanishUnits?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 &nbsp;  
 &nbsp;  
@@ -207,7 +207,7 @@ Back in our repl, we can now `comment line 7` and `uncomment line 8`. On `line 8
 <br />
 <br />
 <br />
-<span id="repl-2" style="color:#000; font-weight:bold;">In this REPL - Click on the file icon in the left column and in the scope.py file, toggle lines 1, 10 & 11, and then run the code to learn more about how Python's LEGB scoping works</span>
+<span id="repl-2" style="color:#000; font-weight:bold;">In this REPL - Click on the Play button to run tests, or click on the file icon in the left column and in the scope.py file, toggle lines 1, 10 & 11, and then run the code to learn more about how Python's LEGB scoping works</span>
 <iframe height="800px" width="100%" src="https://repl.it/@shibani77/ObedientRunnyPixel?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 &nbsp;  
 &nbsp;  
@@ -220,7 +220,7 @@ Let's say we define a variable `my_var` in the global scope and set it to 5. If 
 The above error occurs because, when we make an `assignment` to a variable in scope, that variable becomes local to that scope and `shadows` any similarly named variable in the outer scope. In the context of the repl below, on `line 7` we are in effect `initializing a new variable my_var to a value of += 1`, and an error is generated. This error is particularly common when working with lists as show in the last example in the repl, and one way to solve accessing a variable declared in the global context is to refer to it as `global` as seen in the method on `line 10` of the repl.
 &nbsp;  
 &nbsp;  
-<span id="repl-3" style="color:#000; font-weight:bold;">In this REPL - Click on the file icon in the left column and in the errors.py file, edit the code in functions bar and foo2 to play with Unbound Local Errors</span>  
+<span id="repl-3" style="color:#000; font-weight:bold;">In this REPL - Click on the Play button to run tests, or click on the file icon in the left column and in the errors.py file, edit the code in functions bar and foo2 to play with Unbound Local Errors</span>  
 <iframe height="800px" width="100%" src="https://repl.it/@shibani77/TemporalTrueVaporware?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe> 
 &nbsp;  
 &nbsp;  
@@ -353,7 +353,7 @@ def minimax(self, game, depth=0, scores_map=None):
 ```  
 <br />
 <br />
-<span id="repl-4" style="color:#000; font-weight:bold;">In this REPL - Toggle the multiple tests on each of the map and array methods in the main.py file to view how this quirk is triggered</span>    
+<span id="repl-4" style="color:#000; font-weight:bold;">In this REPL - Click on the Play button to run tests, or toggle the multiple tests on each of the map and array methods in the main.py file to view how this quirk is triggered</span>    
 <iframe height="800px" width="100%" src="https://repl.it/@shibani77/ImaginativeDisguisedDowngrade?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 &nbsp; 
 &nbsp;  
