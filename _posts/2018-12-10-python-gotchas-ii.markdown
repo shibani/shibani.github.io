@@ -351,8 +351,8 @@ def minimax(self, game, depth=0, scores_map=None):
   if not scores_map:  
     scores_map = {}   
 ```  
-&nbsp;  
-&nbsp; 
+<br />
+<br />
 <span id="repl-4" style="color:#000; font-weight:bold;">In this REPL - Toggle the multiple tests on each of the map and array methods in the main.py file to view how this quirk is triggered</span>    
 <iframe height="800px" width="100%" src="https://repl.it/@shibani77/ImaginativeDisguisedDowngrade?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 &nbsp; 
